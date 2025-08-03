@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhD Statistics Notes</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@11.9.0/dist/mermaid.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@^4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@sgratzl/chartjs-chart-boxplot@latest/build/index.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>PhD Statistics Notes</h1>
+            <p>Interactive Learning Platform</p>
+        </div>
+
+        <div class="content-area">
+            <div class="tab-container">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" onclick="TabManager.showTab('week1')">Module 1: Data and Statistics</button>
+                    <button class="tab-btn" onclick="TabManager.showTab('week2')">Module 2: Descriptive Statistics</button>
+                    <button class="tab-btn" onclick="TabManager.showTab('week3')">Module 3: Probabilities & Discrete Distributions</button>
+                    <button class="tab-btn" onclick="TabManager.showTab('week4')">Module 4: Continuous Distributions & Sampling</button>
+                    <button class="tab-btn" onclick="TabManager.showTab('general')">General Notes</button>
+                </div>
+
+                <div class="tab-content">
+                    <div id="week1" class="tab-panel active">
+                        <h2>Module 1: Data and Statistics</h2>
+                        
+                        <div class="sub-tab-container">
+                            <div class="sub-tab-buttons">
+                                <button class="sub-tab-btn active" onclick="TabManager.showSubTab('overview')">Overview</button>
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('types')">Two Types of Statistics</button>
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('dataTypes')">Data Types</button>
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('scales')">Scale of Measurement</button>
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('quiz')">Quiz</button>
+                            </div>
+                            
+                            <div class="sub-tab-content">
+                                <div id="overview" class="sub-tab-panel active">
+                                    <div class="notes-section" id="overviewNotesSection">
+                                        <!-- Overview notes will be displayed here -->
+                                    </div>
+                                </div>
+                                
+                                <div id="types" class="sub-tab-panel">
+                                    <div class="notes-section" id="typesNotesSection">
+                                        <!-- Two types of statistics notes will be displayed here -->
+                                    </div>
+                                </div>
+                                
+                                <div id="dataTypes" class="sub-tab-panel">
+                                    <div class="notes-section" id="dataTypesNotesSection">
+                                        <!-- Data types notes will be displayed here -->
+                                    </div>
+                                </div>
+                                
+                                <div id="scales" class="sub-tab-panel">
+                                    <div class="notes-section" id="scalesNotesSection">
+                                        <!-- Scale of measurement notes will be displayed here -->
+                                    </div>
+                                </div>
+                                
+                                <div id="quiz" class="sub-tab-panel">
+                                    <div class="quiz-section" id="quizSection">
+                                        <!-- Quiz questions will be displayed here -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="week2" class="tab-panel">
+                        <h2>Module 2: Descriptive Statistics</h2>
+                        
+                        <div class="sub-tab-container">
+                            <div class="sub-tab-buttons">
+                                <button class="sub-tab-btn active" onclick="TabManager.showSubTab('overview2')">Overview</button>
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('categorical')">Categorical Data Tables</button>
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('quantitative')">Quantitative Data Tables</button>
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('twoVariables')">Two Variables Tables</button>
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('graphicalDisplay')">Graphical Display</button>
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('bestPractices')">Best Practices</button>
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('measuresOfLocation')">Measures of Location</button>
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('measuresOfVariability')">Measures of Variability</button>
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('distributionShape')">Distribution Shape, Relative Location, and Outliers</button>
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('fiveNumberSummary')">Five-Number Summaries & Box Plots</button>
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('associationMeasures')">Measures of Association</button>
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('keyFormulasModule2')">Key Formulas</button>
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('quiz2')">Quiz</button>
+                            </div>
+                            
+                            <div class="sub-tab-content">
+                                <div id="overview2" class="sub-tab-panel active">
+                                    <div class="notes-section" id="overview2NotesSection">
+                                        <!-- Module 2 overview notes will be displayed here -->
+                                    </div>
+                                </div>
+                                
+                                <div id="categorical" class="sub-tab-panel">
+                                    <div class="notes-section" id="categoricalNotesSection">
+                                        <!-- Categorical data tables notes will be displayed here -->
+                                    </div>
+                                </div>
+                                
+                                <div id="quantitative" class="sub-tab-panel">
+                                    <div class="notes-section" id="quantitativeNotesSection">
+                                        <!-- Quantitative data tables notes will be displayed here -->
+                                    </div>
+                                </div>
+                                
+                                <div id="twoVariables" class="sub-tab-panel">
+                                    <div class="notes-section" id="twoVariablesNotesSection">
+                                        <!-- Two variables tables notes will be displayed here -->
+                                    </div>
+                                </div>
+                                
+                                <div id="graphicalDisplay" class="sub-tab-panel">
+                                    <div class="notes-section" id="graphicalDisplayNotesSection">
+                                        <!-- Graphical display notes will be displayed here -->
+                                    </div>
+                                </div>
+                                
+                                <div id="bestPractices" class="sub-tab-panel">
+                                    <div class="notes-section" id="bestPracticesNotesSection">
+                                        <!-- Best practices notes will be displayed here -->
+                                    </div>
+                                </div>
+                                
+                                <div id="measuresOfLocation" class="sub-tab-panel">
+                                    <div class="notes-section" id="measuresOfLocationNotesSection">
+                                        <!-- Measures of Location notes will be displayed here -->
+                                    </div>
+                                </div>
+                                
+                                <div id="measuresOfVariability" class="sub-tab-panel">
+                                    <div class="notes-section" id="measuresOfVariabilityNotesSection">
+                                        <!-- Measures of Variability notes will be displayed here -->
+                                    </div>
+                                </div>
+                                
+                                <div id="distributionShape" class="sub-tab-panel">
+                                    <div class="notes-section" id="distributionShapeNotesSection">
+                                        <!-- Distribution Shape, Relative Location, and Outliers notes will be displayed here -->
+                                    </div>
+                                </div>
+                                
+                                <div id="fiveNumberSummary" class="sub-tab-panel">
+                                    <div class="notes-section" id="fiveNumberSummaryNotesSection">
+                                        <!-- Five-Number Summaries & Box Plots notes will be displayed here -->
+                                    </div>
+                                </div>
+                                
+                                <div id="associationMeasures" class="sub-tab-panel">
+                                    <div class="notes-section" id="associationMeasuresNotesSection">
+                                        <!-- Measures of Association notes will be displayed here -->
+                                    </div>
+                                </div>
+                                
+                                <div id="keyFormulasModule2" class="sub-tab-panel">
+                                    <div class="notes-section" id="keyFormulasModule2NotesSection">
+                                        <!-- Module 2 Key Formulas notes will be displayed here -->
+                                    </div>
+                                </div>
+
+                                <div id="quiz2" class="sub-tab-panel">
+                                    <div class="quiz-section" id="quiz2Section">
+                                        <!-- Module 2 quiz questions will be displayed here -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="week3" class="tab-panel">
+                        <h2>Module 3: Introduction to Probabilities & Discrete Probability Distribution</h2>
+                        
+                        <div class="sub-tab-container">
+                            <div class="sub-tab-buttons">
+                                <button class="sub-tab-btn active" onclick="TabManager.showSubTab('probabilityBasics')">Event Probabilities</button>
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('probabilityRules')">Probability Rules</button>
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('independence')">Independence & Mutual Exclusivity</button>
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('bayesTheorem')">Bayes' Theorem</button>
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('discreteDistributions')">Discrete Probability Distributions</button>
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('binomialDistribution')">Binomial Distribution</button>
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('poissonDistribution')">Poisson Distribution</button>
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('glossary')">Glossary</button>
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('keyFormulas')">Key Formulas</button>
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('exam')">Exam</button>
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('quiz3')">Quiz</button>
+                            </div>
+                            
+                            <div class="sub-tab-content">
+                                <div id="probabilityBasics" class="sub-tab-panel active">
+                                    <div class="notes-section" id="probabilityBasicsNotesSection">
+                                        <!-- Event Probabilities notes will be displayed here -->
+                                    </div>
+                                </div>
+                                
+                                <div id="probabilityRules" class="sub-tab-panel">
+                                    <div class="notes-section" id="probabilityRulesNotesSection">
+                                        <!-- Probability Rules notes will be displayed here -->
+                                    </div>
+                                </div>
+                                
+                                <div id="independence" class="sub-tab-panel">
+                                    <div class="notes-section" id="independenceNotesSection">
+                                        <!-- Independence & Mutual Exclusivity notes will be displayed here -->
+                                    </div>
+                                </div>
+                                
+                                <div id="bayesTheorem" class="sub-tab-panel">
+                                    <div class="notes-section" id="bayesTheoremNotesSection">
+                                        <!-- Bayes' Theorem notes will be displayed here -->
+                                    </div>
+                                </div>
+                                
+                                <div id="discreteDistributions" class="sub-tab-panel">
+                                    <div class="notes-section" id="discreteDistributionsNotesSection">
+                                        <!-- Discrete Probability Distributions notes will be displayed here -->
+                                    </div>
+                                </div>
+                                
+                                <div id="binomialDistribution" class="sub-tab-panel">
+                                    <div class="notes-section" id="binomialDistributionNotesSection">
+                                        <!-- Binomial Distribution notes will be displayed here -->
+                                    </div>
+                                </div>
+                                
+                                <div id="poissonDistribution" class="sub-tab-panel">
+                                    <div class="notes-section" id="poissonDistributionNotesSection">
+                                        <!-- Poisson Distribution notes will be displayed here -->
+                                    </div>
+                                </div>
+                                
+                                <div id="glossary" class="sub-tab-panel">
+                                    <div class="notes-section" id="glossaryNotesSection">
+                                        <!-- Glossary notes will be displayed here -->
+                                    </div>
+                                </div>
+                                
+                                <div id="keyFormulas" class="sub-tab-panel">
+                                    <div class="notes-section" id="keyFormulasNotesSection">
+                                        <!-- Key Formulas notes will be displayed here -->
+                                    </div>
+                                </div>
+                                
+                                <div id="exam" class="sub-tab-panel">
+                                    <div class="quiz-section" id="examSection">
+                                        <!-- Module 3 exam questions will be displayed here -->
+                                    </div>
+                                </div>
+                                
+                                <div id="quiz3" class="sub-tab-panel">
+                                    <div class="quiz-section" id="quiz3Section">
+                                        <!-- Module 3 quiz questions will be displayed here -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="week4" class="tab-panel">
+                        <h2>Module 4: Continuous Probability Distributions, Sampling, and Interval Estimation</h2>
+                        
+                        <div class="sub-tab-container">
+                            <div class="sub-tab-buttons">
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('continuousDistributions')">Continuous Distributions</button>
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('uniformDistribution')">Uniform Distribution</button>
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('normalDistribution')">Normal Distribution</button>
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('exponentialDistribution')">Exponential Distribution</button>
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('samplingMethods')">Sampling Methods</button>
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('centralLimitTheorem')">Central Limit Theorem</button>
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('intervalEstimation')">Interval Estimation</button>
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('sampleSize')">Sample Size Determination</button>
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('glossaryModule4')">Glossary</button>
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('keyFormulasModule4')">Key Formulas</button>
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('quiz4')">Quiz</button>
+                            </div>
+                            
+                            <div class="sub-tab-content">
+                                <div id="continuousDistributions" class="sub-tab-panel active">
+                                    <div class="notes-section" id="continuousDistributionsNotesSection">
+                                        <!-- Continuous Distributions notes will be displayed here -->
+                                    </div>
+                                </div>
+                                
+                                <div id="uniformDistribution" class="sub-tab-panel">
+                                    <div class="notes-section" id="uniformDistributionNotesSection">
+                                        <!-- Uniform Distribution notes will be displayed here -->
+                                    </div>
+                                </div>
+                                
+                                <div id="normalDistribution" class="sub-tab-panel">
+                                    <div class="notes-section" id="normalDistributionNotesSection">
+                                        <!-- Normal Distribution notes will be displayed here -->
+                                    </div>
+                                </div>
+                                
+                                <div id="exponentialDistribution" class="sub-tab-panel">
+                                    <div class="notes-section" id="exponentialDistributionNotesSection">
+                                        <!-- Exponential Distribution notes will be displayed here -->
+                                    </div>
+                                </div>
+                                
+                                <div id="samplingMethods" class="sub-tab-panel">
+                                    <div class="notes-section" id="samplingMethodsNotesSection">
+                                        <!-- Sampling Methods notes will be displayed here -->
+                                    </div>
+                                </div>
+                                
+                                <div id="centralLimitTheorem" class="sub-tab-panel">
+                                    <div class="notes-section" id="centralLimitTheoremNotesSection">
+                                        <!-- Central Limit Theorem notes will be displayed here -->
+                                    </div>
+                                </div>
+                                
+                                <div id="intervalEstimation" class="sub-tab-panel">
+                                    <div class="notes-section" id="intervalEstimationNotesSection">
+                                        <!-- Interval Estimation notes will be displayed here -->
+                                    </div>
+                                </div>
+                                
+                                <div id="sampleSize" class="sub-tab-panel">
+                                    <div class="notes-section" id="sampleSizeNotesSection">
+                                        <!-- Sample Size Determination notes will be displayed here -->
+                                    </div>
+                                </div>
+                                
+                                <div id="glossaryModule4" class="sub-tab-panel">
+                                    <div class="notes-section" id="glossaryModule4NotesSection">
+                                        <!-- Module 4 Glossary notes will be displayed here -->
+                                    </div>
+                                </div>
+                                
+                                <div id="keyFormulasModule4" class="sub-tab-panel">
+                                    <div class="notes-section" id="keyFormulasModule4NotesSection">
+                                        <!-- Module 4 Key Formulas notes will be displayed here -->
+                                    </div>
+                                </div>
+                                
+                                <div id="quiz4" class="sub-tab-panel">
+                                    <div class="quiz-section" id="quiz4Section">
+                                        <!-- Module 4 quiz questions will be displayed here -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="general" class="tab-panel">
+                        <h2>General Statistics Notes</h2>
+                        <div class="notes-section" id="generalNotesSection">
+                            <!-- General notes will be added here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load JavaScript files in order -->
+    <script src="utils.js"></script>
+    <script src="module1_data_and_statistics.js"></script>
+    <script src="module2_descriptive_statistics.js"></script>
+    <script src="module3_measures_of_location_and_variability.js"></script>
+    <script src="module4_distribution_shape.js"></script>
+    <script src="module5_five_number_summary.js"></script>
+    <script src="module6_association_measures.js"></script>
+    <script src="module7_key_formulas.js"></script>
+    <script src="module8_probability_basics.js"></script>
+    <script src="module9_probability_rules.js"></script>
+    <script src="module10_independence.js"></script>
+    <script src="module11_bayes.js"></script>
+    <script src="module12_discrete_distributions.js"></script>
+    <script src="module13_binomial.js"></script>
+    <script src="module14_poisson.js"></script>
+    <script src="module15_glossary.js"></script>
+            <script src="module16_key_formulas.js"></script>
+        <script src="module4_continuous_distributions.js"></script>
+        <script src="module4_glossary.js"></script>
+        <script src="module4_key_formulas.js"></script>
+        <script src="data.js"></script>
+    <script src="managers.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
