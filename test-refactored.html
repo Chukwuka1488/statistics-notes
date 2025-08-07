@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Refactored Modules</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .test-section {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .test-passed {
+            color: green;
+            font-weight: bold;
+        }
+        .test-failed {
+            color: red;
+            font-weight: bold;
+        }
+        .test-result {
+            margin: 10px 0;
+            padding: 10px;
+            background: #f5f5f5;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Testing Refactored Modules</h1>
+    
+    <div class="test-section">
+        <h2>Test 1: NoteFactory</h2>
+        <div id="test-note-factory" class="test-result"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Test 2: DOM Utils</h2>
+        <div id="test-dom-utils" class="test-result"></div>
+        <div id="test-element" style="display: none;">Test Element</div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Test 3: Table Utils</h2>
+        <div id="test-table-utils" class="test-result"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Test 4: Chart Factory</h2>
+        <div id="test-chart-factory" class="test-result">
+            <div class="chart-container" data-chart="bar" id="test-bar-chart" style="height: 300px;"></div>
+        </div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Test 5: Uniform Calculator</h2>
+        <div id="uniform-calculator"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Test Results Summary</h2>
+        <div id="test-summary" class="test-result"></div>
+    </div>
+
+    <!-- Load Chart.js first -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Load refactored modules -->
+    <script src="src/factories/NoteFactory.js"></script>
+    <script src="src/utils/dom-utils.js"></script>
+    <script src="src/utils/table-utils.js"></script>
+    <script src="src/charts/ChartFactory.js"></script>
+    <script src="src/calculators/UniformCalculator.js"></script>
+    
+    <script>
+        // Test results tracker
+        const testResults = {
+            passed: 0,
+            failed: 0,
+            tests: []
+        };
+        
+        function runTest(name, testFn) {
+            try {
+                testFn();
+                testResults.passed++;
+                testResults.tests.push({name, status: 'passed'});
+                return true;
+            } catch (error) {
+                testResults.failed++;
+                testResults.tests.push({name, status: 'failed', error: error.message});
+                console.error(`Test "${name}" failed:`, error);
+                return false;
+            }
+        }
+        
+        // Test 1: NoteFactory
+        runTest('NoteFactory Creation', () => {
+            const note = NoteFactory.create('Test Title', 'Test Content', 'test-category');
+            if (!note.title || !note.content || !note.category || !note.timestamp) {
+                throw new Error('Note missing required properties');
+            }
+            
+            const valid = NoteFactory.validate(note);
+            if (!valid) {
+                throw new Error('Note validation failed');
+            }
+            
+            document.getElementById('test-note-factory').innerHTML = 
+                '<span class="test-passed">✓ NoteFactory working correctly</span><br>' +
+                `Created note with ID: ${note.id}, Title: ${note.title}`;
+        });
+        
+        // Test 2: DOM Utils
+        runTest('DOM Utils', () => {
+            const testEl = document.getElementById('test-element');
+            
+            // Test show/hide
+            DOMUtils.showElement('test-element');
+            if (!testEl.classList.contains('active')) {
+                throw new Error('showElement failed');
+            }
+            
+            DOMUtils.hideAll('#test-element');
+            if (testEl.classList.contains('active')) {
+                throw new Error('hideAll failed');
+            }
+            
+            // Test createElement
+            const newEl = DOMUtils.createElement('div', {
+                className: 'test-class',
+                id: 'created-element'
+            }, ['Test text']);
+            
+            if (!newEl || newEl.className !== 'test-class') {
+                throw new Error('createElement failed');
+            }
+            
+            document.getElementById('test-dom-utils').innerHTML = 
+                '<span class="test-passed">✓ DOM Utils working correctly</span>';
+        });
+        
+        // Test 3: Table Utils
+        runTest('Table Utils', () => {
+            const headers = ['Name', 'Value'];
+            const rows = [
+                ['Item 1', '100'],
+                ['Item 2', '200'],
+                ['Item 3', '300']
+            ];
+            
+            const tableHTML = TableUtils.createBlueTable(headers, rows);
+            if (!tableHTML.includes('divTable') || !tableHTML.includes('Item 1')) {
+                throw new Error('Table creation failed');
+            }
+            
+            // Test frequency table
+            const freqData = [
+                {category: 'A', frequency: 10},
+                {category: 'B', frequency: 20},
+                {category: 'C', frequency: 30}
+            ];
+            
+            const freqTable = TableUtils.createFrequencyTable(freqData);
+            if (!freqTable.includes('Frequency') || !freqTable.includes('Percentage')) {
+                throw new Error('Frequency table creation failed');
+            }
+            
+            document.getElementById('test-table-utils').innerHTML = 
+                '<span class="test-passed">✓ Table Utils working correctly</span><br>' +
+                'Sample table:<br>' + 
+                tableHTML;
+        });
+        
+        // Test 4: Chart Factory
+        runTest('Chart Factory', () => {
+            const container = document.getElementById('test-bar-chart');
+            
+            // Create a simple bar chart
+            const chart = ChartFactory.createBarChart({
+                canvasId: 'test-bar',
+                labels: ['Jan', 'Feb', 'Mar'],
+                data: [10, 20, 30],
+                title: 'Test Chart'
+            });
+            
+            if (!chart || !chart.canvas) {
+                throw new Error('Chart creation failed');
+            }
+            
+            container.appendChild(chart.canvas);
+            container.insertAdjacentHTML('beforebegin', 
+                '<span class="test-passed">✓ Chart Factory working correctly</span><br>');
+        });
+        
+        // Test 5: Uniform Calculator
+        runTest('Uniform Calculator', () => {
+            const calc = new UniformCalculator();
+            calc.init();
+            
+            const container = document.getElementById('uniform-calculator');
+            if (!container.innerHTML.includes('Uniform Distribution Calculator')) {
+                throw new Error('Calculator initialization failed');
+            }
+            
+            // Test calculation
+            const results = calc.performCalculations(10, 20, 12, 18);
+            if (!results || results.probability === undefined) {
+                throw new Error('Calculator calculation failed');
+            }
+            
+            console.log('Uniform Calculator results:', results);
+        });
+        
+        // Display summary
+        setTimeout(() => {
+            const summary = document.getElementById('test-summary');
+            const allPassed = testResults.failed === 0;
+            
+            let summaryHTML = `
+                <h3 class="${allPassed ? 'test-passed' : 'test-failed'}">
+                    ${allPassed ? '✓ All tests passed!' : '✗ Some tests failed'}
+                </h3>
+                <p>Passed: ${testResults.passed} | Failed: ${testResults.failed}</p>
+                <ul>
+            `;
+            
+            testResults.tests.forEach(test => {
+                summaryHTML += `<li class="${test.status === 'passed' ? 'test-passed' : 'test-failed'}">
+                    ${test.status === 'passed' ? '✓' : '✗'} ${test.name}
+                    ${test.error ? ` - ${test.error}` : ''}
+                </li>`;
+            });
+            
+            summaryHTML += '</ul>';
+            summary.innerHTML = summaryHTML;
+        }, 1000);
+    </script>
+</body>
+</html>

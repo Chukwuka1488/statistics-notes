@@ -13,8 +13,10 @@ const MODULE4_KEY_FORMULAS_NOTES = {
             <h5><strong>Uniform Probability Density Function</strong></h5>
             <div class="formula">
                 <strong>Formula (6.1):</strong><br/>
-                f(x) = 1/(b-a) &nbsp;&nbsp;&nbsp;&nbsp;for a ≤ x ≤ b<br/>
-                f(x) = 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elsewhere
+                $$f(x) = \begin{cases} 
+                \frac{1}{b-a} & \text{for } a \leq x \leq b \\
+                0 & \text{elsewhere}
+                \end{cases}$$
             </div>
             <p><strong>When to Apply:</strong> Use when all values in an interval [a,b] are equally likely (constant probability density).</p>
             <p><strong>Practical Instances:</strong></p>
@@ -28,7 +30,7 @@ const MODULE4_KEY_FORMULAS_NOTES = {
             <h5><strong>Normal Probability Density Function</strong></h5>
             <div class="formula">
                 <strong>Formula (6.2):</strong><br/>
-                f(x) = (1/(σ√(2π))) × e^(-(x-μ)²/(2σ²))
+                $$f(x) = \frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}$$
             </div>
             <p><strong>When to Apply:</strong> Use for bell-shaped, symmetric distributions where data clusters around the mean.</p>
             <p><strong>Practical Instances:</strong></p>

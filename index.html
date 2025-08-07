@@ -4,10 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PhD Statistics Notes</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="core/css/styles.css">
     <script src="https://cdn.jsdelivr.net/npm/mermaid@11.9.0/dist/mermaid.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@^4"></script>
     <script src="https://cdn.jsdelivr.net/npm/@sgratzl/chartjs-chart-boxplot@latest/build/index.umd.min.js"></script>
+    
+    <!-- Mathematical Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!-- Removed Math.js and Algebrite - using native JavaScript with enhanced precision -->
+    
+    <!-- JSXGraph for Advanced Mathematical Visualization -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+    <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+    
+    <!-- Enhanced JavaScript Math Utilities -->
+    <script>
+    // Enhanced precision utilities for mathematical calculations
+    window.EnhancedMath = {
+        // High precision division
+        divide: (a, b) => Number((a / b).toPrecision(12)),
+        
+        // High precision addition
+        add: (a, b) => Number((a + b).toPrecision(12)),
+        
+        // High precision subtraction
+        subtract: (a, b) => Number((a - b).toPrecision(12)),
+        
+        // High precision multiplication
+        multiply: (a, b) => Number((a * b).toPrecision(12)),
+        
+        // Enhanced formatting with configurable precision
+        format: (num, options = {}) => {
+            const precision = options.precision || 6;
+            return Number(num.toPrecision(precision)).toString();
+        },
+        
+        // Power function
+        pow: Math.pow,
+        
+        // Square root
+        sqrt: Math.sqrt
+    };
+    
+    console.log('Enhanced Math utilities loaded successfully');
+    </script>
+    
+    <!-- MathJax Configuration -->
+    <script>
+    window.MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        options: {
+            skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            ignoreHtmlClass: 'tex2jax_ignore'
+        }
+    };
+    </script>
 </head>
 <body>
     <div class="container">
@@ -23,6 +80,8 @@
                     <button class="tab-btn" onclick="TabManager.showTab('week2')">Module 2: Descriptive Statistics</button>
                     <button class="tab-btn" onclick="TabManager.showTab('week3')">Module 3: Probabilities & Discrete Distributions</button>
                     <button class="tab-btn" onclick="TabManager.showTab('week4')">Module 4: Continuous Distributions & Sampling</button>
+                <button class="tab-btn" onclick="TabManager.showTab('week5')">Module 5: Hypothesis Tests & Mean Comparisons</button>
+<button class="tab-btn" onclick="TabManager.showTab('week6')">Module 6: ANOVA & Goodness of Fit</button>
                     <button class="tab-btn" onclick="TabManager.showTab('general')">General Notes</button>
                 </div>
 
@@ -279,6 +338,7 @@
                                 <button class="sub-tab-btn" onclick="TabManager.showSubTab('glossaryModule4')">Glossary</button>
                                 <button class="sub-tab-btn" onclick="TabManager.showSubTab('keyFormulasModule4')">Key Formulas</button>
                                 <button class="sub-tab-btn" onclick="TabManager.showSubTab('quiz4')">Quiz</button>
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('exam4')">Exam</button>
                             </div>
                             
                             <div class="sub-tab-content">
@@ -347,6 +407,172 @@
                                         <!-- Module 4 quiz questions will be displayed here -->
                                     </div>
                                 </div>
+                                
+                                <div id="exam4" class="sub-tab-panel">
+                                    <div class="quiz-section" id="exam4Section">
+                                        <!-- Module 4 exam questions will be displayed here -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="week5" class="tab-panel">
+                        <h2>Module 5: Hypothesis Tests and Comparisons Involving Means</h2>
+                        
+                        <div class="sub-tab-container">
+                            <div class="sub-tab-buttons">
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('hypothesisBasics')">Hypothesis Testing Basics</button>
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('onePopulationMean')">One Population Mean</button>
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('populationMeanSigmaUnknown')">Population Mean: σ Unknown</button>
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('populationProportion')">Population Proportion</button>
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('pValueApproach')">p-Value Approach</button>
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('typeITypeII')">Type I & Type II Errors</button>
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('twoPopulationMeans')">Two Population Means</button>
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('matchedSamples')">Matched Samples</button>
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('practicalApplications')">Practical Applications</button>
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('glossaryModule5')">Glossary</button>
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('keyFormulasModule5')">Key Formulas</button>
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('quiz5')">Quiz</button>
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('exam5')">Exam</button>
+                            </div>
+                            
+                            <div class="sub-tab-content">
+                                <div id="hypothesisBasics" class="sub-tab-panel active">
+                                    <div class="notes-section" id="hypothesisBasicsNotesSection">
+                                        <!-- Hypothesis Testing Basics notes will be displayed here -->
+                                    </div>
+                                </div>
+                                
+                                <div id="onePopulationMean" class="sub-tab-panel">
+                                    <div class="notes-section" id="onePopulationMeanNotesSection">
+                                        <!-- One Population Mean notes will be displayed here -->
+                                    </div>
+                                </div>
+                                
+                                <div id="populationMeanSigmaUnknown" class="sub-tab-panel">
+                                    <div class="notes-section" id="populationMeanSigmaUnknownNotesSection">
+                                        <!-- Population Mean: σ Unknown notes will be displayed here -->
+                                    </div>
+                                </div>
+                                
+                                <div id="populationProportion" class="sub-tab-panel">
+                                    <div class="notes-section" id="populationProportionNotesSection">
+                                        <!-- Population Proportion notes will be displayed here -->
+                                    </div>
+                                </div>
+                                
+                                <div id="pValueApproach" class="sub-tab-panel">
+                                    <div class="notes-section" id="pValueApproachNotesSection">
+                                        <!-- p-Value Approach notes will be displayed here -->
+                                    </div>
+                                </div>
+                                
+                                <div id="typeITypeII" class="sub-tab-panel">
+                                    <div class="notes-section" id="typeITypeIINotesSection">
+                                        <!-- Type I & Type II Errors notes will be displayed here -->
+                                    </div>
+                                </div>
+                                
+                                <div id="twoPopulationMeans" class="sub-tab-panel">
+                                    <div class="notes-section" id="twoPopulationMeansNotesSection">
+                                        <!-- Two Population Means notes will be displayed here -->
+                                    </div>
+                                </div>
+                                
+                                <div id="matchedSamples" class="sub-tab-panel">
+                                    <div class="notes-section" id="matchedSamplesNotesSection">
+                                        <!-- Matched Samples notes will be displayed here -->
+                                    </div>
+                                </div>
+                                
+                                <div id="practicalApplications" class="sub-tab-panel">
+                                    <div class="notes-section" id="practicalApplicationsNotesSection">
+                                        <!-- Practical Applications notes will be displayed here -->
+                                    </div>
+                                </div>
+                                
+                                <div id="glossaryModule5" class="sub-tab-panel">
+                                    <div class="notes-section" id="glossaryModule5NotesSection">
+                                        <!-- Module 5 Glossary notes will be displayed here -->
+                                    </div>
+                                </div>
+                                
+                                <div id="keyFormulasModule5" class="sub-tab-panel">
+                                    <div class="notes-section" id="keyFormulasModule5NotesSection">
+                                        <!-- Module 5 Key Formulas notes will be displayed here -->
+                                    </div>
+                                </div>
+                                
+                                <div id="quiz5" class="sub-tab-panel">
+                                    <div class="quiz-section" id="quiz5Section">
+                                        <!-- Module 5 quiz questions will be displayed here -->
+                                    </div>
+                                </div>
+                                
+                                <div id="exam5" class="sub-tab-panel">
+                                    <div class="quiz-section" id="exam5Section">
+                                        <!-- Module 5 exam questions will be displayed here -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="week6" class="tab-panel">
+                        <h2>Module 6: Inferences about Population Variances</h2>
+                        <div class="sub-tab-container">
+                            <div class="sub-tab-buttons">
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('populationVariance')">Population Variance</button>
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('twoPopulationVariances')">Two Population Variances</button>
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('anova')">ANOVA</button>
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('goodnessOfFit')">Goodness of Fit</button>
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('independence')">Test of Independence</button>
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('glossaryModule6')">Glossary</button>
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('keyFormulasModule6')">Key Formulas</button>
+                                <button class="sub-tab-btn" onclick="TabManager.showSubTab('quiz6')">Quiz</button>
+                            </div>
+                            <div class="sub-tab-content">
+                                <div id="populationVariance" class="sub-tab-panel active">
+                                    <div class="notes-section" id="populationVarianceNotesSection">
+                                        <!-- Population Variance notes will be displayed here -->
+                                    </div>
+                                </div>
+                                <div id="twoPopulationVariances" class="sub-tab-panel">
+                                    <div class="notes-section" id="twoPopulationVariancesNotesSection">
+                                        <!-- Two Population Variances notes will be displayed here -->
+                                    </div>
+                                </div>
+                                <div id="anova" class="sub-tab-panel">
+                                    <div class="notes-section" id="anovaNotesSection">
+                                        <!-- ANOVA notes will be displayed here -->
+                                    </div>
+                                </div>
+                                <div id="goodnessOfFit" class="sub-tab-panel">
+                                    <div class="notes-section" id="goodnessOfFitNotesSection">
+                                        <!-- Goodness of Fit notes will be displayed here -->
+                                    </div>
+                                </div>
+                                <div id="independence" class="sub-tab-panel">
+                                    <div class="notes-section" id="independenceNotesSection">
+                                        <!-- Test of Independence notes will be displayed here -->
+                                    </div>
+                                </div>
+                                <div id="glossaryModule6" class="sub-tab-panel">
+                                    <div class="notes-section" id="glossaryModule6NotesSection">
+                                        <!-- Module 6 Glossary notes will be displayed here -->
+                                    </div>
+                                </div>
+                                <div id="keyFormulasModule6" class="sub-tab-panel">
+                                    <div class="notes-section" id="keyFormulasModule6NotesSection">
+                                        <!-- Module 6 Key Formulas notes will be displayed here -->
+                                    </div>
+                                </div>
+                                <div id="quiz6" class="sub-tab-panel">
+                                    <div class="quiz-section" id="quiz6Section">
+                                        <!-- Module 6 quiz questions will be displayed here -->
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -362,29 +588,45 @@
         </div>
     </div>
 
-    <!-- Load JavaScript files in order -->
-    <script src="utils.js"></script>
-    <script src="module1_data_and_statistics.js"></script>
-    <script src="module2_descriptive_statistics.js"></script>
-    <script src="module3_measures_of_location_and_variability.js"></script>
-    <script src="module4_distribution_shape.js"></script>
-    <script src="module5_five_number_summary.js"></script>
-    <script src="module6_association_measures.js"></script>
-    <script src="module7_key_formulas.js"></script>
-    <script src="module8_probability_basics.js"></script>
-    <script src="module9_probability_rules.js"></script>
-    <script src="module10_independence.js"></script>
-    <script src="module11_bayes.js"></script>
-    <script src="module12_discrete_distributions.js"></script>
-    <script src="module13_binomial.js"></script>
-    <script src="module14_poisson.js"></script>
-    <script src="module15_glossary.js"></script>
-            <script src="module16_key_formulas.js"></script>
-        <script src="module4_continuous_distributions.js"></script>
-        <script src="module4_glossary.js"></script>
-        <script src="module4_key_formulas.js"></script>
-        <script src="data.js"></script>
-    <script src="managers.js"></script>
-    <script src="script.js"></script>
+    <!-- Core utility files -->
+    <script src="core/js/utils.js"></script>
+    
+    <!-- Module 1: Data and Statistics -->
+    <script src="modules/module1/module1_data_and_statistics.js"></script>
+    
+    <!-- Module 2: Descriptive Statistics -->
+    <script src="modules/module2/module2_descriptive_statistics.js"></script>
+    <script src="modules/module2/measures_of_location.js"></script>
+    <script src="modules/module2/distribution_shape.js"></script>
+    <script src="modules/module2/five_number_summary.js"></script>
+    <script src="modules/module2/association_measures.js"></script>
+    <script src="modules/module2/key_formulas.js"></script>
+    
+    <!-- Module 3: Probability -->
+    <script src="modules/module3/probability_basics.js"></script>
+    <script src="modules/module3/probability_rules.js"></script>
+    <script src="modules/module3/independence.js"></script>
+    <script src="modules/module3/bayes.js"></script>
+    <script src="modules/module3/discrete_distributions.js"></script>
+    <script src="modules/module3/binomial.js"></script>
+    <script src="modules/module3/poisson.js"></script>
+    <script src="modules/module3/glossary.js"></script>
+    <script src="modules/module3/key_formulas.js"></script>
+    
+    <!-- Module 4: Continuous Distributions -->
+    <script src="modules/module4/continuous_distributions.js"></script>
+    <script src="modules/module4/glossary.js"></script>
+    <script src="modules/module4/key_formulas.js"></script>
+    
+    <!-- Module 5: Hypothesis Testing -->
+    <script src="modules/module5/hypothesis_testing.js"></script>
+    
+    <!-- Module 6: ANOVA & Goodness of Fit -->
+    <script src="modules/module6/anova_goodness_of_fit.js"></script>
+    
+    <!-- Core application files -->
+    <script src="core/js/data.js"></script>
+    <script src="core/js/managers.js"></script>
+    <script src="core/js/script.js"></script>
 </body>
 </html>

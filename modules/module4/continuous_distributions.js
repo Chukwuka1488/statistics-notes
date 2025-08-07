@@ -129,6 +129,39 @@ const MODULE4_CONTINUOUS_DISTRIBUTIONS_NOTES = {
                 P(120 ≤ x ≤ 130) = 10 × (1/20) = 10/20 = 0.50
             </div>
             
+            <h4><strong>Interactive Uniform Distribution Calculator</strong></h4>
+            <div style="background-color: #f8f9fa; border: 2px solid #007bff; border-radius: 10px; padding: 20px; margin: 20px 0;">
+                <h5 style="color: #007bff; margin-bottom: 15px;">📊 Calculate Uniform Probabilities and Statistics</h5>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+                    <div>
+                        <label for="uniform-a" style="display: block; font-weight: bold; margin-bottom: 5px;">Minimum Value (a):</label>
+                        <input type="number" id="uniform-a" value="120" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+                    </div>
+                    <div>
+                        <label for="uniform-b" style="display: block; font-weight: bold; margin-bottom: 5px;">Maximum Value (b):</label>
+                        <input type="number" id="uniform-b" value="140" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+                    <div>
+                        <label for="uniform-x1" style="display: block; font-weight: bold; margin-bottom: 5px;">Lower Bound (x₁):</label>
+                        <input type="number" id="uniform-x1" value="125" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+                    </div>
+                    <div>
+                        <label for="uniform-x2" style="display: block; font-weight: bold; margin-bottom: 5px;">Upper Bound (x₂):</label>
+                        <input type="number" id="uniform-x2" value="135" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+                    </div>
+                </div>
+                
+                <button onclick="calculateUniform()" style="background-color: #007bff; color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer; font-size: 16px; font-weight: bold;">Calculate Results</button>
+                
+                <div id="uniform-results" style="margin-top: 20px; padding: 15px; background-color: white; border-radius: 6px; border: 1px solid #ddd;">
+                    <p><em>Enter values and click "Calculate Results" to see the probability and statistics.</em></p>
+                </div>
+            </div>
+            
             <h4><strong>Key Properties of Continuous Random Variables</strong></h4>
             <p>Two major differences distinguish continuous from discrete random variables:</p>
             <ol>
@@ -593,7 +626,60 @@ const MODULE4_CONTINUOUS_DISTRIBUTIONS_NOTES = {
                 <li><strong>Audit Sampling:</strong> Estimating error rates in large populations</li>
             </ul>
             
-            <p><strong>Final Insight:</strong> <em>Probability does not make a decision recommendation directly, but it provides information that helps the decision maker better understand the risks and uncertainties associated with the problem. Ultimately, this information may assist the decision maker in reaching a good decision.</em></p>`
+            <p><strong>Final Insight:</strong> <em>Probability does not make a decision recommendation directly, but it provides information that helps the decision maker better understand the risks and uncertainties associated with the problem. Ultimately, this information may assist the decision maker in reaching a good decision.</em></p>
+            
+            <h4><strong>Interactive Normal Distribution Calculator</strong></h4>
+            <div style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 8px; padding: 20px; margin: 20px 0;">
+                <h5 style="color: #007bff; margin-bottom: 15px;">🧮 Normal Distribution Calculator & Graph</h5>
+                <p style="margin-bottom: 15px; color: #666;">Calculate probabilities for any normal distribution and visualize the results with an interactive graph.</p>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px;">
+                    <div>
+                        <h6 style="margin-bottom: 10px; color: #333;">Distribution Parameters:</h6>
+                        <div style="margin-bottom: 15px;">
+                            <label for="normal-mu" style="display: block; margin-bottom: 5px; font-weight: bold; color: #333;">Mean (μ):</label>
+                            <input type="number" id="normal-mu" value="100" placeholder="e.g., 100" 
+                                   step="any" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px;">
+                        </div>
+                        <div style="margin-bottom: 15px;">
+                            <label for="normal-sigma" style="display: block; margin-bottom: 5px; font-weight: bold; color: #333;">Standard Deviation (σ):</label>
+                            <input type="number" id="normal-sigma" value="15" placeholder="e.g., 15" 
+                                   step="any" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px;">
+                        </div>
+                    </div>
+                    <div>
+                        <h6 style="margin-bottom: 10px; color: #333;">Probability Range:</h6>
+                        <div style="margin-bottom: 15px;">
+                            <label for="normal-x1" style="display: block; margin-bottom: 5px; font-weight: bold; color: #333;">Lower Bound (x₁):</label>
+                            <input type="number" id="normal-x1" value="85" placeholder="e.g., 85" 
+                                   step="any" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px;">
+                        </div>
+                        <div style="margin-bottom: 15px;">
+                            <label for="normal-x2" style="display: block; margin-bottom: 5px; font-weight: bold; color: #333;">Upper Bound (x₂):</label>
+                            <input type="number" id="normal-x2" value="115" placeholder="e.g., 115" 
+                                   step="any" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px;">
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-bottom: 20px;">
+                    <button onclick="calculateNormal()" style="background-color: #007bff; color: white; padding: 12px 25px; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; font-weight: bold;">
+                        📊 Calculate Normal Probability
+                    </button>
+                </div>
+                
+                <div id="calculateNormal-results" style="margin-top: 20px;"></div>
+            </div>
+            
+            <div style="margin-top: 15px; padding: 15px; background-color: #e8f4fd; border-radius: 4px; border-left: 4px solid #007bff;">
+                <h6 style="color: #007bff; margin-bottom: 8px;">💡 Example Use Cases:</h6>
+                <ul style="margin: 5px 0; color: #333;">
+                    <li><strong>Quality Control:</strong> μ=100, σ=5, find P(95 ≤ X ≤ 105) for product specifications</li>
+                    <li><strong>Test Scores:</strong> μ=500, σ=100, find P(400 ≤ X ≤ 600) for grade distributions</li>
+                    <li><strong>Manufacturing:</strong> μ=50, σ=2, find P(48 ≤ X ≤ 52) for tolerance analysis</li>
+                    <li><strong>Business Analytics:</strong> μ=1000, σ=200, find P(800 ≤ X ≤ 1200) for sales forecasting</li>
+                </ul>
+            </div>`
         }
     ],
     
@@ -792,7 +878,59 @@ const MODULE4_CONTINUOUS_DISTRIBUTIONS_NOTES = {
                 <li><strong>Wide Applicability:</strong> Models many natural waiting time phenomena</li>
                 <li><strong>Poisson Connection:</strong> Links to arrival process modeling</li>
                 <li><strong>Business Planning:</strong> Essential for service capacity and reliability analysis</li>
-            </ul>`
+            </ul>
+            
+            <h4><strong>Interactive Exponential Distribution Calculator</strong></h4>
+            <div style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 8px; padding: 20px; margin: 20px 0;">
+                <h5 style="color: #007bff; margin-bottom: 15px;">🧮 Exponential Distribution Calculator & Graph</h5>
+                <p style="margin-bottom: 15px; color: #666;">Calculate probabilities for exponential distributions and visualize waiting times, service times, and reliability analysis with an interactive graph.</p>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px;">
+                    <div>
+                        <h6 style="margin-bottom: 10px; color: #333;">Distribution Parameter:</h6>
+                        <div style="margin-bottom: 15px;">
+                            <label for="exponential-mu" style="display: block; margin-bottom: 5px; font-weight: bold; color: #333;">Mean (μ) - Average Time:</label>
+                            <input type="number" id="exponential-mu" value="15" placeholder="e.g., 15 minutes" 
+                                   step="any" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px;">
+                            <small style="color: #666; font-size: 0.85em;">Note: σ = μ for exponential distribution</small>
+                        </div>
+                    </div>
+                    <div>
+                        <h6 style="margin-bottom: 10px; color: #333;">Time Range:</h6>
+                        <div style="margin-bottom: 15px;">
+                            <label for="exponential-x1" style="display: block; margin-bottom: 5px; font-weight: bold; color: #333;">Lower Bound (x₁):</label>
+                            <input type="number" id="exponential-x1" value="0" placeholder="e.g., 0" min="0"
+                                   step="any" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px;">
+                        </div>
+                        <div style="margin-bottom: 15px;">
+                            <label for="exponential-x2" style="display: block; margin-bottom: 5px; font-weight: bold; color: #333;">Upper Bound (x₂):</label>
+                            <input type="number" id="exponential-x2" value="20" placeholder="e.g., 20" min="0"
+                                   step="any" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px;">
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-bottom: 20px;">
+                    <button onclick="calculateExponential()" style="background-color: #007bff; color: white; padding: 12px 25px; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; font-weight: bold;">
+                        📊 Calculate Exponential Probability
+                    </button>
+                </div>
+                
+                <div id="calculateExponential-results" style="margin-top: 20px;"></div>
+            </div>
+            
+            <div style="margin-top: 15px; padding: 15px; background-color: #fff8e1; border-radius: 4px; border-left: 4px solid #ffc107;">
+                <h6 style="color: #f57f17; margin-bottom: 8px;">💡 Example Use Cases:</h6>
+                <ul style="margin: 5px 0; color: #333;">
+                    <li><strong>Service Times:</strong> μ=8 minutes, find P(5 ≤ X ≤ 12) for customer service duration</li>
+                    <li><strong>Equipment Reliability:</strong> μ=500 hours, find P(0 ≤ X ≤ 300) for failure-free operation</li>
+                    <li><strong>Loading Dock:</strong> μ=15 minutes, find P(6 ≤ X ≤ 18) for truck loading times</li>
+                    <li><strong>Call Center:</strong> μ=4 minutes, find P(2 ≤ X ≤ 8) for call handling times</li>
+                </ul>
+                <div style="margin-top: 10px; padding: 8px; background-color: #f3e5f5; border-radius: 3px;">
+                    <strong style="color: #7b1fa2;">📍 Key Insight:</strong> <em>Exponential distribution is "memoryless" - the probability of an event occurring in the next time interval is independent of how much time has already elapsed.</em>
+                </div>
+            </div>`
         }
     ],
     

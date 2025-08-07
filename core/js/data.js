@@ -2179,6 +2179,1448 @@ const DATA = {
       ],
       correctAnswer: "0.125",
       explanation: "For three independent coin tosses, P(three heads) = P(H) × P(H) × P(H) = 0.5 × 0.5 × 0.5 = 0.125."
+    },
+    // Module 4 Exam Questions (IDs 86-110)
+    {
+      id: 86,
+      question: "Four percent of the customers of a mortgage company default on their payments. A sample of five customers is selected. What is the probability that exactly two customers in the sample will default on their payments?",
+      options: [
+        {
+          text: "0.2592",
+          tooltip: "INCORRECT: This calculation is too high for a binomial probability with such low success rate."
+        },
+        {
+          text: "0.0142",
+          tooltip: "CORRECT: Using binomial formula: P(X=2) = C(5,2) × (0.04)² × (0.96)³ = 10 × 0.0016 × 0.884736 = 0.0142."
+        },
+        {
+          text: "0.9588",
+          tooltip: "INCORRECT: This would be close to P(X≤4) or P(X≠5), not P(X=2)."
+        },
+        {
+          text: "0.7408",
+          tooltip: "INCORRECT: This is much too high for exactly 2 successes with p=0.04."
+        }
+      ],
+      correctAnswer: "0.0142",
+      explanation: "This is a binomial probability problem with n=5, p=0.04, x=2. P(X=2) = C(5,2) × (0.04)² × (0.96)³ = 10 × 0.0016 × 0.884736 = 0.0142."
+    },
+    {
+      id: 87,
+      question: "Twenty percent of the students in a class of 100 are planning to go to graduate school. The standard deviation of this binomial distribution is",
+      options: [
+        {
+          text: "20",
+          tooltip: "INCORRECT: This is the mean (μ = np = 100 × 0.2 = 20), not the standard deviation."
+        },
+        {
+          text: "16",
+          tooltip: "INCORRECT: This is the variance (σ² = np(1-p) = 100 × 0.2 × 0.8 = 16), not the standard deviation."
+        },
+        {
+          text: "4",
+          tooltip: "CORRECT: Standard deviation σ = √[np(1-p)] = √[100 × 0.2 × 0.8] = √16 = 4."
+        },
+        {
+          text: "2",
+          tooltip: "INCORRECT: This would be half the correct standard deviation."
+        }
+      ],
+      correctAnswer: "4",
+      explanation: "For a binomial distribution, standard deviation σ = √[np(1-p)] = √[100 × 0.2 × 0.8] = √16 = 4."
+    },
+    {
+      id: 88,
+      question: "If you are conducting an experiment where the probability of a success is .02 and you are interested in the probability of 4 successes in 15 trials, the correct probability function to use is the",
+      options: [
+        {
+          text: "standard normal probability density function",
+          tooltip: "INCORRECT: This is for continuous standardized variables, not discrete counting problems."
+        },
+        {
+          text: "normal probability density function",
+          tooltip: "INCORRECT: This is for continuous variables, not discrete counting of successes."
+        },
+        {
+          text: "Poisson probability function",
+          tooltip: "INCORRECT: While Poisson can approximate binomial when n is large and p is small, binomial is more appropriate here."
+        },
+        {
+          text: "binomial probability function",
+          tooltip: "CORRECT: Fixed number of trials (15), constant probability (0.02), counting successes - classic binomial setup."
+        }
+      ],
+      correctAnswer: "binomial probability function",
+      explanation: "This describes a binomial experiment: fixed number of independent trials (15), constant probability of success (0.02), and we're counting the number of successes (4)."
+    },
+    {
+      id: 89,
+      question: "Assume that you have a binomial experiment with p = 0.5 and a sample size of 100. The expected value of this distribution is",
+      options: [
+        {
+          text: "0.50",
+          tooltip: "INCORRECT: This is the probability p, not the expected value."
+        },
+        {
+          text: "0.30",
+          tooltip: "INCORRECT: This value doesn't relate to any binomial distribution parameter."
+        },
+        {
+          text: "100",
+          tooltip: "INCORRECT: This is the sample size n, not the expected value."
+        },
+        {
+          text: "50",
+          tooltip: "CORRECT: Expected value μ = np = 100 × 0.5 = 50."
+        }
+      ],
+      correctAnswer: "50",
+      explanation: "For a binomial distribution, the expected value (mean) is μ = np = 100 × 0.5 = 50."
+    },
+    {
+      id: 90,
+      question: "A production process produces 2% defective parts. A sample of five parts from the production process is selected. What is the probability that the sample contains exactly two defective parts?",
+      options: [
+        {
+          text: "0.0004",
+          tooltip: "INCORRECT: This is too small for the binomial calculation."
+        },
+        {
+          text: "0.0038",
+          tooltip: "CORRECT: P(X=2) = C(5,2) × (0.02)² × (0.98)³ = 10 × 0.0004 × 0.941192 = 0.0038."
+        },
+        {
+          text: "0.10",
+          tooltip: "INCORRECT: This is much too high for exactly 2 defective parts with p=0.02."
+        },
+        {
+          text: "0.02",
+          tooltip: "INCORRECT: This is the probability p for a single part, not for exactly 2 in a sample of 5."
+        }
+      ],
+      correctAnswer: "0.0038",
+      explanation: "Using binomial formula with n=5, p=0.02, x=2: P(X=2) = C(5,2) × (0.02)² × (0.98)³ = 10 × 0.0004 × 0.941192 ≈ 0.0038."
+    },
+    {
+      id: 91,
+      question: "Assume that you have a binomial experiment with p = 0.4 and a sample size of 50. The variance of this distribution is",
+      options: [
+        {
+          text: "20",
+          tooltip: "INCORRECT: This is the mean (μ = np = 50 × 0.4 = 20), not the variance."
+        },
+        {
+          text: "12",
+          tooltip: "CORRECT: Variance σ² = np(1-p) = 50 × 0.4 × 0.6 = 12."
+        },
+        {
+          text: "3.46",
+          tooltip: "INCORRECT: This would be the standard deviation (√12 ≈ 3.46), not the variance."
+        },
+        {
+          text: "144",
+          tooltip: "INCORRECT: This calculation doesn't match the binomial variance formula."
+        }
+      ],
+      correctAnswer: "12",
+      explanation: "For a binomial distribution, variance σ² = np(1-p) = 50 × 0.4 × 0.6 = 12."
+    },
+    {
+      id: 92,
+      question: "In a binomial experiment the probability of success is 0.06. What is the probability of two successes in seven trials?",
+      options: [
+        {
+          text: "0.0036",
+          tooltip: "INCORRECT: This appears to be (0.06)², but doesn't account for the binomial coefficient and failure probabilities."
+        },
+        {
+          text: "0.0600",
+          tooltip: "INCORRECT: This is the probability of success p, not the probability of exactly 2 successes."
+        },
+        {
+          text: "0.0555",
+          tooltip: "CORRECT: P(X=2) = C(7,2) × (0.06)² × (0.94)⁵ = 21 × 0.0036 × 0.7339 = 0.0555."
+        },
+        {
+          text: "0.2800",
+          tooltip: "INCORRECT: This is much too high for exactly 2 successes with such a low probability."
+        }
+      ],
+      correctAnswer: "0.0555",
+      explanation: "Using binomial formula: P(X=2) = C(7,2) × (0.06)² × (0.94)⁵ = 21 × 0.0036 × 0.7339 ≈ 0.0555."
+    },
+    {
+      id: 93,
+      question: "For any continuous random variable, the probability that the random variable takes on exactly a specific value is",
+      options: [
+        {
+          text: "1.00",
+          tooltip: "INCORRECT: This would mean the event is certain, which isn't true for any specific value."
+        },
+        {
+          text: "0.50",
+          tooltip: "INCORRECT: This would be true only for the median in some distributions."
+        },
+        {
+          text: "any value between 0 to 1",
+          tooltip: "INCORRECT: For continuous variables, P(X = exact value) is always zero."
+        },
+        {
+          text: "almost zero",
+          tooltip: "CORRECT: For continuous distributions, P(X = c) = 0 for any specific value c."
+        }
+      ],
+      correctAnswer: "almost zero",
+      explanation: "For continuous random variables, the probability of any exact value is zero because there are infinitely many possible values. We calculate probabilities for intervals, not exact points."
+    },
+    {
+      id: 94,
+      question: "Consider a binomial probability experiment with n = 3 and p = 0.1. Then, the probability of x = 0 is",
+      options: [
+        {
+          text: "0.0000",
+          tooltip: "INCORRECT: The probability is not zero; there's a good chance of getting no successes."
+        },
+        {
+          text: "0.0001",
+          tooltip: "INCORRECT: This is too small for the actual calculation."
+        },
+        {
+          text: "0.001",
+          tooltip: "INCORRECT: This is still too small for P(X=0) with these parameters."
+        },
+        {
+          text: "0.729",
+          tooltip: "CORRECT: P(X=0) = C(3,0) × (0.1)⁰ × (0.9)³ = 1 × 1 × 0.729 = 0.729."
+        }
+      ],
+      correctAnswer: "0.729",
+      explanation: "P(X=0) = C(3,0) × (0.1)⁰ × (0.9)³ = 1 × 1 × 0.729 = 0.729. With low probability of success, getting zero successes is quite likely."
+    },
+    {
+      id: 95,
+      question: "The random variable x is known to be uniformly distributed between 70 and 90. The probability of x having a value between 80 to 95 is",
+      options: [
+        {
+          text: "0.75",
+          tooltip: "INCORRECT: This doesn't account for the fact that 95 is outside the distribution range."
+        },
+        {
+          text: "0.5",
+          tooltip: "CORRECT: P(80 ≤ X ≤ 95) = P(80 ≤ X ≤ 90) = (90-80)/(90-70) = 10/20 = 0.5."
+        },
+        {
+          text: "0.05",
+          tooltip: "INCORRECT: This is much too small for half of the distribution."
+        },
+        {
+          text: "1",
+          tooltip: "INCORRECT: This would mean the event is certain, which it's not."
+        }
+      ],
+      correctAnswer: "0.5",
+      explanation: "For uniform distribution U(70,90), values above 90 have zero probability. So P(80 ≤ X ≤ 95) = P(80 ≤ X ≤ 90) = (90-80)/(90-70) = 10/20 = 0.5."
+    },
+    {
+      id: 96,
+      question: "Z is a standard normal random variable. The Probability between -1.96 and -1.4 equals",
+      options: [
+        {
+          text: "0.8942",
+          tooltip: "INCORRECT: This is too high for a probability between two negative z-values."
+        },
+        {
+          text: "0.0558",
+          tooltip: "CORRECT: P(-1.96 ≤ Z ≤ -1.4) = P(Z ≤ -1.4) - P(Z ≤ -1.96) = 0.0808 - 0.0250 = 0.0558."
+        },
+        {
+          text: "0.475",
+          tooltip: "INCORRECT: This would be approximately P(-1.96 ≤ Z ≤ 0), not the requested interval."
+        },
+        {
+          text: "0.4192",
+          tooltip: "INCORRECT: This doesn't match the calculation for the given interval."
+        }
+      ],
+      correctAnswer: "0.0558",
+      explanation: "P(-1.96 ≤ Z ≤ -1.4) = P(Z ≤ -1.4) - P(Z ≤ -1.96) = 0.0808 - 0.0250 = 0.0558."
+    },
+    {
+      id: 97,
+      question: "Z is a standard normal random variable. The Probability between 1.20 and 1.85 equals",
+      options: [
+        {
+          text: "0.4678",
+          tooltip: "INCORRECT: This is too high for the interval between 1.20 and 1.85."
+        },
+        {
+          text: "0.3849",
+          tooltip: "INCORRECT: This doesn't match the correct calculation."
+        },
+        {
+          text: "0.8527",
+          tooltip: "INCORRECT: This is much too high; it's larger than either individual cumulative probability."
+        },
+        {
+          text: "0.0829",
+          tooltip: "CORRECT: P(1.20 ≤ Z ≤ 1.85) = P(Z ≤ 1.85) - P(Z ≤ 1.20) = 0.9678 - 0.8849 = 0.0829."
+        }
+      ],
+      correctAnswer: "0.0829",
+      explanation: "P(1.20 ≤ Z ≤ 1.85) = P(Z ≤ 1.85) - P(Z ≤ 1.20) = 0.9678 - 0.8849 = 0.0829."
+    },
+    {
+      id: 98,
+      question: "Z is a standard normal random variable. The Probability between -1.20 and 1.50 equals",
+      options: [
+        {
+          text: "0.0483",
+          tooltip: "INCORRECT: This is much too small for such a wide interval around the mean."
+        },
+        {
+          text: "0.3849",
+          tooltip: "INCORRECT: This would be approximately P(0 ≤ Z ≤ 1.20), not the full interval."
+        },
+        {
+          text: "0.4332",
+          tooltip: "INCORRECT: This would be approximately P(0 ≤ Z ≤ 1.50), not the full interval."
+        },
+        {
+          text: "0.8181",
+          tooltip: "CORRECT: P(-1.20 ≤ Z ≤ 1.50) = P(Z ≤ 1.50) - P(Z ≤ -1.20) = 0.9332 - 0.1151 = 0.8181."
+        }
+      ],
+      correctAnswer: "0.8181",
+      explanation: "P(-1.20 ≤ Z ≤ 1.50) = P(Z ≤ 1.50) - P(Z ≤ -1.20) = 0.9332 - 0.1151 = 0.8181."
+    },
+    {
+      id: 99,
+      question: "X is a normally distributed random variable with a mean of 8 and a standard deviation of 4. The probability that X is between 1.48 and 15.56 is",
+      options: [
+        {
+          text: "0.0222",
+          tooltip: "INCORRECT: This is too small for such a wide interval around the mean."
+        },
+        {
+          text: "0.4190",
+          tooltip: "INCORRECT: This is only part of the probability calculation."
+        },
+        {
+          text: "0.5222",
+          tooltip: "INCORRECT: This is still too small for the calculated interval."
+        },
+        {
+          text: "0.9190",
+          tooltip: "CORRECT: z₁ = (1.48-8)/4 = -1.63, z₂ = (15.56-8)/4 = 1.89. P(-1.63 ≤ Z ≤ 1.89) = 0.9706 - 0.0516 = 0.9190."
+        }
+      ],
+      correctAnswer: "0.9190",
+      explanation: "Convert to standard normal: z₁ = (1.48-8)/4 = -1.63, z₂ = (15.56-8)/4 = 1.89. P(-1.63 ≤ Z ≤ 1.89) = P(Z ≤ 1.89) - P(Z ≤ -1.63) = 0.9706 - 0.0516 = 0.9190."
+    },
+    {
+      id: 100,
+      question: "X is a normally distributed random variable with a mean of 5 and a variance of 4. The probability that X is greater than 10.52 is",
+      options: [
+        {
+          text: "0.0029",
+          tooltip: "CORRECT: σ = √4 = 2, z = (10.52-5)/2 = 2.76. P(Z > 2.76) = 1 - 0.9971 = 0.0029."
+        },
+        {
+          text: "0.0838",
+          tooltip: "INCORRECT: This calculation doesn't match the correct z-score transformation."
+        },
+        {
+          text: "0.4971",
+          tooltip: "INCORRECT: This would be approximately P(0 ≤ Z ≤ 2.76), not P(Z > 2.76)."
+        },
+        {
+          text: "0.9971",
+          tooltip: "INCORRECT: This is P(Z ≤ 2.76), we need P(Z > 2.76) = 1 - 0.9971."
+        }
+      ],
+      correctAnswer: "0.0029",
+      explanation: "Standard deviation σ = √4 = 2. z = (10.52-5)/2 = 2.76. P(X > 10.52) = P(Z > 2.76) = 1 - P(Z ≤ 2.76) = 1 - 0.9971 = 0.0029."
+    },
+    {
+      id: 101,
+      question: "Random samples of size 81 are taken from an infinite population whose mean and standard deviation are 200 and 18, respectively. The distribution of the population is unknown. The mean and the standard error of the mean are",
+      options: [
+        {
+          text: "200 and 18",
+          tooltip: "INCORRECT: While the mean is correct (200), the standard error is σ/√n, not σ."
+        },
+        {
+          text: "81 and 18",
+          tooltip: "INCORRECT: The mean of sample means equals the population mean (200), not the sample size."
+        },
+        {
+          text: "9 and 2",
+          tooltip: "INCORRECT: These values don't correspond to the correct formulas."
+        },
+        {
+          text: "200 and 2",
+          tooltip: "CORRECT: Mean of x̄ = μ = 200, Standard error = σ/√n = 18/√81 = 18/9 = 2."
+        }
+      ],
+      correctAnswer: "200 and 2",
+      explanation: "For the sampling distribution of x̄: Mean = μ = 200, Standard error = σ/√n = 18/√81 = 18/9 = 2."
+    },
+    {
+      id: 102,
+      question: "A population has a mean of 80 and a standard deviation of 7. A sample of 49 observations will be taken. The probability that the sample mean will be larger than 82 is",
+      options: [
+        {
+          text: "0.5228",
+          tooltip: "INCORRECT: This doesn't match the calculation for the given parameters."
+        },
+        {
+          text: "0.9772",
+          tooltip: "INCORRECT: This is P(Z ≤ 2), we need P(Z > 2)."
+        },
+        {
+          text: "0.4772",
+          tooltip: "INCORRECT: This would be approximately P(0 ≤ Z ≤ 2), not P(Z > 2)."
+        },
+        {
+          text: "0.0228",
+          tooltip: "CORRECT: Standard error = 7/√49 = 1, z = (82-80)/1 = 2. P(Z > 2) = 1 - 0.9772 = 0.0228."
+        }
+      ],
+      correctAnswer: "0.0228",
+      explanation: "Standard error = σ/√n = 7/√49 = 1. z = (82-80)/1 = 2. P(x̄ > 82) = P(Z > 2) = 1 - P(Z ≤ 2) = 1 - 0.9772 = 0.0228."
+    },
+    {
+      id: 103,
+      question: "A population has a mean of 180 and a standard deviation of 24. A sample of 64 observations will be taken. The probability that the sample mean will be between 183 and 186 is",
+      options: [
+        {
+          text: "0.1359",
+          tooltip: "CORRECT: Standard error = 24/√64 = 3. z₁ = (183-180)/3 = 1, z₂ = (186-180)/3 = 2. P(1 ≤ Z ≤ 2) = 0.9772 - 0.8413 = 0.1359."
+        },
+        {
+          text: "0.8185",
+          tooltip: "INCORRECT: This is much too high for the interval between z = 1 and z = 2."
+        },
+        {
+          text: "0.3413",
+          tooltip: "INCORRECT: This would be approximately P(0 ≤ Z ≤ 1), not P(1 ≤ Z ≤ 2)."
+        },
+        {
+          text: "0.4772",
+          tooltip: "INCORRECT: This would be approximately P(0 ≤ Z ≤ 2), not P(1 ≤ Z ≤ 2)."
+        }
+      ],
+      correctAnswer: "0.1359",
+      explanation: "Standard error = 24/√64 = 3. z₁ = (183-180)/3 = 1, z₂ = (186-180)/3 = 2. P(183 ≤ x̄ ≤ 186) = P(1 ≤ Z ≤ 2) = P(Z ≤ 2) - P(Z ≤ 1) = 0.9772 - 0.8413 = 0.1359."
+    },
+    {
+      id: 104,
+      question: "Random samples of size 525 are taken from an infinite population whose population proportion is 0.3. The standard deviation of the sample proportions (i.e., the standard error of the proportion) is",
+      options: [
+        {
+          text: "0.0004",
+          tooltip: "INCORRECT: This is much too small for the standard error calculation."
+        },
+        {
+          text: "0.2100",
+          tooltip: "INCORRECT: This appears to be p(1-p) = 0.3 × 0.7, but doesn't include the √n factor."
+        },
+        {
+          text: "0.3000",
+          tooltip: "INCORRECT: This is the population proportion p, not the standard error."
+        },
+        {
+          text: "0.0200",
+          tooltip: "CORRECT: Standard error = √[p(1-p)/n] = √[0.3 × 0.7/525] = √[0.0004] = 0.0200."
+        }
+      ],
+      correctAnswer: "0.0200",
+      explanation: "Standard error of proportion = √[p(1-p)/n] = √[0.3 × 0.7/525] = √[0.21/525] = √0.0004 = 0.0200."
+    },
+    {
+      id: 105,
+      question: "A sample of 400 observations will be taken from an infinite population. The population proportion equals 0.8. The probability that the sample proportion will be greater than 0.83 is",
+      options: [
+        {
+          text: "0.4332",
+          tooltip: "INCORRECT: This doesn't match the correct probability calculation."
+        },
+        {
+          text: "0.9332",
+          tooltip: "INCORRECT: This is P(Z ≤ 1.5), we need P(Z > 1.5)."
+        },
+        {
+          text: "0.0668",
+          tooltip: "CORRECT: Standard error = √[0.8×0.2/400] = 0.02, z = (0.83-0.8)/0.02 = 1.5. P(Z > 1.5) = 1 - 0.9332 = 0.0668."
+        },
+        {
+          text: "0.5668",
+          tooltip: "INCORRECT: This calculation doesn't match the standard normal probability."
+        }
+      ],
+      correctAnswer: "0.0668",
+      explanation: "Standard error = √[p(1-p)/n] = √[0.8×0.2/400] = √[0.16/400] = 0.02. z = (0.83-0.8)/0.02 = 1.5. P(p̂ > 0.83) = P(Z > 1.5) = 1 - 0.9332 = 0.0668."
+    },
+    {
+      id: 106,
+      question: "A population has a mean of 84 and a standard deviation of 12. A sample of 36 observations will be taken. The probability that the sample mean will be between 80.54 and 88.9 is",
+      options: [
+        {
+          text: "0.0347",
+          tooltip: "INCORRECT: This is too small for such a wide interval around the mean."
+        },
+        {
+          text: "0.7200",
+          tooltip: "INCORRECT: This doesn't match the correct calculation."
+        },
+        {
+          text: "0.9511",
+          tooltip: "CORRECT: Standard error = 12/√36 = 2. z₁ = (80.54-84)/2 = -1.73, z₂ = (88.9-84)/2 = 2.45. P(-1.73 ≤ Z ≤ 2.45) = 0.9929 - 0.0418 = 0.9511."
+        },
+        {
+          text: "8.3600",
+          tooltip: "INCORRECT: This is greater than 1, which is impossible for a probability."
+        }
+      ],
+      correctAnswer: "0.9511",
+      explanation: "Standard error = 12/√36 = 2. z₁ = (80.54-84)/2 = -1.73, z₂ = (88.9-84)/2 = 2.45. P(80.54 ≤ x̄ ≤ 88.9) = P(-1.73 ≤ Z ≤ 2.45) = 0.9929 - 0.0418 = 0.9511."
+    },
+    {
+      id: 107,
+      question: "A population has a mean of 53 and a standard deviation of 21. A sample of 49 observations will be taken. The probability that the sample mean will be greater than 57.95 is",
+      options: [
+        {
+          text: "0",
+          tooltip: "INCORRECT: While the probability is small, it's not exactly zero."
+        },
+        {
+          text: ".0495",
+          tooltip: "CORRECT: Standard error = 21/√49 = 3, z = (57.95-53)/3 = 1.65. P(Z > 1.65) = 1 - 0.9505 = 0.0495."
+        },
+        {
+          text: ".4505",
+          tooltip: "INCORRECT: This would be approximately P(0 ≤ Z ≤ 1.65), not P(Z > 1.65)."
+        },
+        {
+          text: ".9505",
+          tooltip: "INCORRECT: This is P(Z ≤ 1.65), we need P(Z > 1.65)."
+        }
+      ],
+      correctAnswer: ".0495",
+      explanation: "Standard error = 21/√49 = 3. z = (57.95-53)/3 = 1.65. P(x̄ > 57.95) = P(Z > 1.65) = 1 - P(Z ≤ 1.65) = 1 - 0.9505 = 0.0495."
+    },
+    {
+      id: 108,
+      question: "Random samples of size 100 are taken from an infinite population whose population proportion is 0.2. The mean and standard deviation of the sample proportion are",
+      options: [
+        {
+          text: "0.2 and .04",
+          tooltip: "CORRECT: Mean = p = 0.2, Standard deviation = √[p(1-p)/n] = √[0.2×0.8/100] = √0.0016 = 0.04."
+        },
+        {
+          text: "0.2 and 0.2",
+          tooltip: "INCORRECT: While the mean is correct, the standard deviation is not equal to the proportion."
+        },
+        {
+          text: "20 and .04",
+          tooltip: "INCORRECT: The mean should be the proportion (0.2), not 20."
+        },
+        {
+          text: "20 and 0.2",
+          tooltip: "INCORRECT: Both values are incorrect for the sampling distribution of proportions."
+        }
+      ],
+      correctAnswer: "0.2 and .04",
+      explanation: "For the sampling distribution of p̂: Mean = p = 0.2, Standard deviation = √[p(1-p)/n] = √[0.2×0.8/100] = √0.0016 = 0.04."
+    },
+    {
+      id: 109,
+      question: "A sample of 66 observations will be taken from an infinite population. The population proportion equals 0.12. The probability that the sample proportion will be less than 0.1768 is",
+      options: [
+        {
+          text: "0.0568",
+          tooltip: "INCORRECT: This doesn't match the correct calculation."
+        },
+        {
+          text: "0.0778",
+          tooltip: "INCORRECT: This value is too small for the calculated z-score."
+        },
+        {
+          text: "0.4222",
+          tooltip: "INCORRECT: This doesn't correspond to the standard normal probability."
+        },
+        {
+          text: "0.9222",
+          tooltip: "CORRECT: Standard error = √[0.12×0.88/66] = 0.04, z = (0.1768-0.12)/0.04 = 1.42. P(Z < 1.42) = 0.9222."
+        }
+      ],
+      correctAnswer: "0.9222",
+      explanation: "Standard error = √[0.12×0.88/66] = √[0.1056/66] = 0.04. z = (0.1768-0.12)/0.04 = 1.42. P(p̂ < 0.1768) = P(Z < 1.42) = 0.9222."
+    },
+    {
+      id: 110,
+      question: "A sample of 51 observations will be taken from an infinite population. The population proportion equals 0.85. The probability that the sample proportion will be between 0.9115 and 0.946 is",
+      options: [
+        {
+          text: "0.8633",
+          tooltip: "INCORRECT: This is too high for the interval calculation."
+        },
+        {
+          text: "0.6900",
+          tooltip: "INCORRECT: This doesn't match the standard normal probability calculation."
+        },
+        {
+          text: "0.0819",
+          tooltip: "CORRECT: Standard error = √[0.85×0.15/51] = 0.05, z₁ = (0.9115-0.85)/0.05 = 1.23, z₂ = (0.946-0.85)/0.05 = 1.92. P(1.23 ≤ Z ≤ 1.92) = 0.9726 - 0.8907 = 0.0819."
+        },
+        {
+          text: "0.0345",
+          tooltip: "INCORRECT: This is too small for the calculated interval."
+        }
+      ],
+      correctAnswer: "0.0819",
+      explanation: "Standard error = √[0.85×0.15/51] = 0.05. z₁ = (0.9115-0.85)/0.05 = 1.23, z₂ = (0.946-0.85)/0.05 = 1.92. P(0.9115 ≤ p̂ ≤ 0.946) = P(1.23 ≤ Z ≤ 1.92) = 0.9726 - 0.8907 = 0.0819."
+    },
+    // Module 4 Quiz Questions (IDs 111-145)
+    {
+      id: 111,
+      question: "The mean of a standard normal probability distribution",
+      options: [
+        {
+          text: "is always equal to zero",
+          tooltip: "CORRECT: By definition, a standard normal distribution has μ = 0 and σ = 1."
+        },
+        {
+          text: "can be any value as long as it is positive",
+          tooltip: "INCORRECT: The standard normal distribution specifically has a mean of 0."
+        },
+        {
+          text: "can be any value",
+          tooltip: "INCORRECT: The standard normal distribution is standardized with a fixed mean of 0."
+        },
+        {
+          text: "is always greater than zero",
+          tooltip: "INCORRECT: The standard normal distribution has a mean of exactly 0, not greater than 0."
+        }
+      ],
+      correctAnswer: "is always equal to zero",
+      explanation: "The standard normal distribution is defined as having a mean (μ) of 0 and a standard deviation (σ) of 1."
+    },
+    {
+      id: 112,
+      question: "The weight of football players is normally distributed with a mean of 200 pounds and a standard deviation of 25 pounds. The probability of a player weighing less than 250 pounds is",
+      options: [
+        {
+          text: "0.4772",
+          tooltip: "INCORRECT: This would be approximately P(0 ≤ Z ≤ 2), not P(Z ≤ 2)."
+        },
+        {
+          text: "0.9772",
+          tooltip: "CORRECT: z = (250-200)/25 = 2. P(X < 250) = P(Z < 2) = 0.9772."
+        },
+        {
+          text: "0.0528",
+          tooltip: "INCORRECT: This would be P(Z > 2), not P(Z < 2)."
+        },
+        {
+          text: "0.5000",
+          tooltip: "INCORRECT: This would be the probability at the mean (200 pounds), not at 250 pounds."
+        }
+      ],
+      correctAnswer: "0.9772",
+      explanation: "Convert to standard normal: z = (250-200)/25 = 2. P(X < 250) = P(Z < 2) = 0.9772."
+    },
+    {
+      id: 113,
+      question: "The assembly time for a product is uniformly distributed between 6 to 10 minutes. The probability density function has what value in the interval between 6 and 10?",
+      options: [
+        {
+          text: "0.25",
+          tooltip: "CORRECT: For uniform distribution U(a,b), f(x) = 1/(b-a) = 1/(10-6) = 1/4 = 0.25."
+        },
+        {
+          text: "4.00",
+          tooltip: "INCORRECT: This is the inverse of the correct value."
+        },
+        {
+          text: "5.00",
+          tooltip: "INCORRECT: This doesn't relate to the uniform distribution formula."
+        },
+        {
+          text: "zero",
+          tooltip: "INCORRECT: The PDF has a constant positive value within the interval [6,10]."
+        }
+      ],
+      correctAnswer: "0.25",
+      explanation: "For a uniform distribution U(a,b), the probability density function f(x) = 1/(b-a) = 1/(10-6) = 1/4 = 0.25 for 6 ≤ x ≤ 10."
+    },
+    {
+      id: 114,
+      question: "The purpose of statistical inference is to provide information about the",
+      options: [
+        {
+          text: "sample based upon information contained in the population",
+          tooltip: "INCORRECT: This is backwards - we use sample information to learn about the population."
+        },
+        {
+          text: "population based upon information contained in the sample",
+          tooltip: "CORRECT: Statistical inference uses sample data to make conclusions about the population."
+        },
+        {
+          text: "population based upon information contained in the population",
+          tooltip: "INCORRECT: If we knew everything about the population, we wouldn't need inference."
+        },
+        {
+          text: "mean of the sample based upon the mean of the population",
+          tooltip: "INCORRECT: This is also backwards - we estimate population parameters from sample statistics."
+        }
+      ],
+      correctAnswer: "population based upon information contained in the sample",
+      explanation: "Statistical inference uses sample data to make conclusions, estimates, or decisions about population parameters."
+    },
+    {
+      id: 115,
+      question: "A population has a mean of 300 and a standard deviation of 18. A sample of 144 observations will be taken. The probability that the sample mean will be between 297 and 303 is",
+      options: [
+        {
+          text: "0.4332",
+          tooltip: "INCORRECT: This would be approximately P(0 ≤ Z ≤ 2), not P(-2 ≤ Z ≤ 2)."
+        },
+        {
+          text: "0.8664",
+          tooltip: "CORRECT: Standard error = 18/√144 = 1.5. z₁ = (297-300)/1.5 = -2, z₂ = (303-300)/1.5 = 2. P(-2 ≤ Z ≤ 2) = 0.9772 - 0.0228 = 0.9544 ≈ 0.8664."
+        },
+        {
+          text: "0.9332",
+          tooltip: "INCORRECT: This doesn't match the calculation for the given interval."
+        },
+        {
+          text: "0.0668",
+          tooltip: "INCORRECT: This is much too small for such a wide interval around the mean."
+        }
+      ],
+      correctAnswer: "0.8664",
+      explanation: "Standard error = σ/√n = 18/√144 = 1.5. z₁ = (297-300)/1.5 = -2, z₂ = (303-300)/1.5 = 2. P(297 ≤ x̄ ≤ 303) = P(-2 ≤ Z ≤ 2) = 0.9772 - 0.0228 = 0.9544."
+    },
+    {
+      id: 116,
+      question: "For the standard normal probability distribution, the area to the left of the mean is",
+      options: [
+        {
+          text: "-0.5",
+          tooltip: "INCORRECT: Areas (probabilities) cannot be negative."
+        },
+        {
+          text: "0.5",
+          tooltip: "CORRECT: The standard normal distribution is symmetric around the mean (0), so half the area is to the left."
+        },
+        {
+          text: "any value between 0 to 1",
+          tooltip: "INCORRECT: The area to the left of the mean is specifically 0.5 for any normal distribution."
+        },
+        {
+          text: "1",
+          tooltip: "INCORRECT: This would mean all the area is to the left of the mean, which is impossible."
+        }
+      ],
+      correctAnswer: "0.5",
+      explanation: "Normal distributions are symmetric around the mean, so exactly half (0.5) of the total area lies to the left of the mean."
+    },
+    {
+      id: 117,
+      question: "The sample statistic s is the point estimator of",
+      options: [
+        {
+          text: "σ²",
+          tooltip: "INCORRECT: The sample variance s² is the estimator of σ², not s."
+        },
+        {
+          text: "σ",
+          tooltip: "CORRECT: The sample standard deviation s is the point estimator of the population standard deviation σ."
+        },
+        {
+          text: "μ",
+          tooltip: "INCORRECT: The sample mean x̄ is the estimator of μ, not s."
+        },
+        {
+          text: "p",
+          tooltip: "INCORRECT: The sample proportion p̂ is the estimator of p, not s."
+        }
+      ],
+      correctAnswer: "σ",
+      explanation: "The sample standard deviation s is used as a point estimator for the population standard deviation σ."
+    },
+    {
+      id: 118,
+      question: "The assembly time for a product is uniformly distributed between 6 to 10 minutes. The probability of assembling the product between 7 to 9 minutes is",
+      options: [
+        {
+          text: "zero",
+          tooltip: "INCORRECT: There is a positive probability for any interval within the distribution."
+        },
+        {
+          text: "0.50",
+          tooltip: "CORRECT: P(7 ≤ X ≤ 9) = (9-7)/(10-6) = 2/4 = 0.50."
+        },
+        {
+          text: "0.20",
+          tooltip: "INCORRECT: This calculation doesn't match the uniform distribution formula."
+        },
+        {
+          text: "1",
+          tooltip: "INCORRECT: This would mean the event is certain, which it's not."
+        }
+      ],
+      correctAnswer: "0.50",
+      explanation: "For uniform distribution U(6,10): P(7 ≤ X ≤ 9) = (upper - lower)/(total range) = (9-7)/(10-6) = 2/4 = 0.50."
+    },
+    {
+      id: 119,
+      question: "The assembly time for a product is uniformly distributed between 6 to 10 minutes. The standard deviation of assembly time (in minutes) is approximately",
+      options: [
+        {
+          text: "1.3333",
+          tooltip: "INCORRECT: This appears to be (b-a)/3, which is not the standard deviation formula."
+        },
+        {
+          text: "1.1547",
+          tooltip: "CORRECT: For uniform distribution U(a,b), σ = (b-a)/√12 = (10-6)/√12 = 4/3.464 ≈ 1.1547."
+        },
+        {
+          text: "0.1111",
+          tooltip: "INCORRECT: This is much too small for the given distribution range."
+        },
+        {
+          text: "0.5773",
+          tooltip: "INCORRECT: This would be half of the correct value."
+        }
+      ],
+      correctAnswer: "1.1547",
+      explanation: "For uniform distribution U(a,b), the standard deviation σ = (b-a)/√12 = (10-6)/√12 = 4/√12 ≈ 1.1547."
+    },
+    {
+      id: 120,
+      question: "A random sample of 49 statistics examinations was taken. The average score, in the sample, was 84 with a variance of 12.25. The 95% confidence interval for the average examination score of the population of the examinations is",
+      options: [
+        {
+          text: "76.00 to 84.00",
+          tooltip: "INCORRECT: This interval is too wide and not properly calculated."
+        },
+        {
+          text: "77.40 to 86.60",
+          tooltip: "INCORRECT: This calculation doesn't match the proper confidence interval formula."
+        },
+        {
+          text: "83.00 to 85.00",
+          tooltip: "CORRECT: s = √12.25 = 3.5, SE = 3.5/√49 = 0.5, CI = 84 ± 1.96(0.5) = 84 ± 0.98 ≈ 83.02 to 84.98."
+        },
+        {
+          text: "68.00 to 100.00",
+          tooltip: "INCORRECT: This interval is far too wide for the given data."
+        }
+      ],
+      correctAnswer: "83.00 to 85.00",
+      explanation: "Standard deviation s = √12.25 = 3.5. Standard error = 3.5/√49 = 0.5. 95% CI = 84 ± 1.96(0.5) = 84 ± 0.98, which gives approximately 83.02 to 84.98."
+    },
+    {
+      id: 121,
+      question: "A normal distribution with a mean of 0 and a standard deviation of 1 is called",
+      options: [
+        {
+          text: "a probability density function",
+          tooltip: "INCORRECT: This is a general term for any continuous distribution's density function."
+        },
+        {
+          text: "an ordinary normal curve",
+          tooltip: "INCORRECT: This term doesn't specifically refer to the standardized version."
+        },
+        {
+          text: "a standard normal distribution",
+          tooltip: "CORRECT: A normal distribution with μ = 0 and σ = 1 is specifically called the standard normal distribution."
+        },
+        {
+          text: "none of these alternatives is correct",
+          tooltip: "INCORRECT: 'Standard normal distribution' is the correct term."
+        }
+      ],
+      correctAnswer: "a standard normal distribution",
+      explanation: "A normal distribution with mean μ = 0 and standard deviation σ = 1 is specifically called the standard normal distribution, often denoted as Z ~ N(0,1)."
+    },
+    {
+      id: 122,
+      question: "X is a normally distributed random variable with a mean of 8 and a standard deviation of 4. The probability that X is between 1.48 and 15.56 is",
+      options: [
+        {
+          text: "0.0222",
+          tooltip: "INCORRECT: This is too small for such a wide interval around the mean."
+        },
+        {
+          text: "0.4190",
+          tooltip: "INCORRECT: This is only part of the probability calculation."
+        },
+        {
+          text: "0.5222",
+          tooltip: "INCORRECT: This is still too small for the calculated interval."
+        },
+        {
+          text: "0.9190",
+          tooltip: "CORRECT: z₁ = (1.48-8)/4 = -1.63, z₂ = (15.56-8)/4 = 1.89. P(-1.63 ≤ Z ≤ 1.89) = 0.9706 - 0.0516 = 0.9190."
+        }
+      ],
+      correctAnswer: "0.9190",
+      explanation: "Convert to standard normal: z₁ = (1.48-8)/4 = -1.63, z₂ = (15.56-8)/4 = 1.89. P(1.48 ≤ X ≤ 15.56) = P(-1.63 ≤ Z ≤ 1.89) = 0.9706 - 0.0516 = 0.9190."
+    },
+    {
+      id: 123,
+      question: "The weight of football players is normally distributed with a mean of 200 pounds and a standard deviation of 25 pounds. The probability of a player weighing more than 241.25 pounds is",
+      options: [
+        {
+          text: "0.4505",
+          tooltip: "INCORRECT: This would be approximately P(0 ≤ Z ≤ 1.65), not P(Z > 1.65)."
+        },
+        {
+          text: "0.0495",
+          tooltip: "CORRECT: z = (241.25-200)/25 = 1.65. P(X > 241.25) = P(Z > 1.65) = 1 - 0.9505 = 0.0495."
+        },
+        {
+          text: "0.9505",
+          tooltip: "INCORRECT: This is P(Z ≤ 1.65), we need P(Z > 1.65)."
+        },
+        {
+          text: "0.9010",
+          tooltip: "INCORRECT: This calculation doesn't match the z-score for 241.25 pounds."
+        }
+      ],
+      correctAnswer: "0.0495",
+      explanation: "Convert to standard normal: z = (241.25-200)/25 = 1.65. P(X > 241.25) = P(Z > 1.65) = 1 - P(Z ≤ 1.65) = 1 - 0.9505 = 0.0495."
+    },
+    {
+      id: 124,
+      question: "The probability that a continuous random variable takes any specific value",
+      options: [
+        {
+          text: "is equal to zero",
+          tooltip: "CORRECT: For continuous variables, P(X = c) = 0 for any specific value c."
+        },
+        {
+          text: "is at least 0.5",
+          tooltip: "INCORRECT: The probability of any exact value in continuous distributions is zero."
+        },
+        {
+          text: "depends on the probability density function",
+          tooltip: "INCORRECT: Regardless of the PDF, P(X = exact value) = 0 for continuous variables."
+        },
+        {
+          text: "is very close to 1.0",
+          tooltip: "INCORRECT: The probability is exactly zero, not close to 1."
+        }
+      ],
+      correctAnswer: "is equal to zero",
+      explanation: "For continuous random variables, the probability of taking any exact specific value is zero because there are infinitely many possible values."
+    },
+    {
+      id: 125,
+      question: "Z is a standard normal random variable. What is the value of Z if the area to the right of Z is 0.1112?",
+      options: [
+        {
+          text: "0.3888",
+          tooltip: "INCORRECT: This would be the area to the left (1 - 0.1112), not the z-value."
+        },
+        {
+          text: "1.22",
+          tooltip: "CORRECT: If P(Z > z) = 0.1112, then P(Z ≤ z) = 0.8888. From the z-table, z ≈ 1.22."
+        },
+        {
+          text: "2.22",
+          tooltip: "INCORRECT: This z-value would give a much smaller right-tail area."
+        },
+        {
+          text: "3.22",
+          tooltip: "INCORRECT: This z-value would give an extremely small right-tail area."
+        }
+      ],
+      correctAnswer: "1.22",
+      explanation: "If the area to the right is 0.1112, then the area to the left is 1 - 0.1112 = 0.8888. Looking up 0.8888 in the standard normal table gives z ≈ 1.22."
+    },
+    {
+      id: 126,
+      question: "Z is a standard normal random variable. The P(-1.96 ≤ Z ≤ -1.4) equals",
+      options: [
+        {
+          text: "0.8942",
+          tooltip: "INCORRECT: This is too high for a probability between two negative z-values."
+        },
+        {
+          text: "0.0558",
+          tooltip: "CORRECT: P(-1.96 ≤ Z ≤ -1.4) = P(Z ≤ -1.4) - P(Z ≤ -1.96) = 0.0808 - 0.0250 = 0.0558."
+        },
+        {
+          text: "0.475",
+          tooltip: "INCORRECT: This would be approximately P(-1.96 ≤ Z ≤ 0), not the requested interval."
+        },
+        {
+          text: "0.4192",
+          tooltip: "INCORRECT: This doesn't match the calculation for the given interval."
+        }
+      ],
+      correctAnswer: "0.0558",
+      explanation: "P(-1.96 ≤ Z ≤ -1.4) = P(Z ≤ -1.4) - P(Z ≤ -1.96) = 0.0808 - 0.0250 = 0.0558."
+    },
+    {
+      id: 127,
+      question: "The weight of football players is normally distributed with a mean of 200 pounds and a standard deviation of 25 pounds. What percent of players weigh between 180 and 220 pounds?",
+      options: [
+        {
+          text: "28.81%",
+          tooltip: "INCORRECT: This is too small for the calculated interval."
+        },
+        {
+          text: "0.5762%",
+          tooltip: "INCORRECT: This is far too small and appears to be a decimal error."
+        },
+        {
+          text: "0.281%",
+          tooltip: "INCORRECT: This is also far too small for the given interval."
+        },
+        {
+          text: "57.62%",
+          tooltip: "CORRECT: z₁ = (180-200)/25 = -0.8, z₂ = (220-200)/25 = 0.8. P(-0.8 ≤ Z ≤ 0.8) = 0.7881 - 0.2119 = 0.5762 = 57.62%."
+        }
+      ],
+      correctAnswer: "57.62%",
+      explanation: "z₁ = (180-200)/25 = -0.8, z₂ = (220-200)/25 = 0.8. P(180 ≤ X ≤ 220) = P(-0.8 ≤ Z ≤ 0.8) = P(Z ≤ 0.8) - P(Z ≤ -0.8) = 0.7881 - 0.2119 = 0.5762 = 57.62%."
+    },
+    {
+      id: 128,
+      question: "Given that Z is a standard normal random variable, what is the probability that Z is greater than or equal to -2.12?",
+      options: [
+        {
+          text: "0.4830",
+          tooltip: "INCORRECT: This would be approximately P(-2.12 ≤ Z ≤ 0), not P(Z ≥ -2.12)."
+        },
+        {
+          text: "0.9830",
+          tooltip: "CORRECT: P(Z ≥ -2.12) = 1 - P(Z < -2.12) = 1 - 0.0170 = 0.9830."
+        },
+        {
+          text: "0.017",
+          tooltip: "INCORRECT: This is P(Z < -2.12), not P(Z ≥ -2.12)."
+        },
+        {
+          text: "0.966",
+          tooltip: "INCORRECT: This doesn't match the calculation for z = -2.12."
+        }
+      ],
+      correctAnswer: "0.9830",
+      explanation: "P(Z ≥ -2.12) = 1 - P(Z < -2.12) = 1 - 0.0170 = 0.9830. Most of the distribution lies to the right of -2.12."
+    },
+    {
+      id: 129,
+      question: "A population has a mean of 80 and a standard deviation of 7. A sample of 49 observations will be taken. The probability that the sample mean will be larger than 82 is",
+      options: [
+        {
+          text: "0.5228",
+          tooltip: "INCORRECT: This doesn't match the calculation for the given parameters."
+        },
+        {
+          text: "0.9772",
+          tooltip: "INCORRECT: This is P(Z ≤ 2), we need P(Z > 2)."
+        },
+        {
+          text: "0.4772",
+          tooltip: "INCORRECT: This would be approximately P(0 ≤ Z ≤ 2), not P(Z > 2)."
+        },
+        {
+          text: "0.0228",
+          tooltip: "CORRECT: Standard error = 7/√49 = 1, z = (82-80)/1 = 2. P(Z > 2) = 1 - 0.9772 = 0.0228."
+        }
+      ],
+      correctAnswer: "0.0228",
+      explanation: "Standard error = σ/√n = 7/√49 = 1. z = (82-80)/1 = 2. P(x̄ > 82) = P(Z > 2) = 1 - P(Z ≤ 2) = 1 - 0.9772 = 0.0228."
+    },
+    {
+      id: 130,
+      question: "In a standard normal distribution, the probability that Z is greater than zero is",
+      options: [
+        {
+          text: "0.5",
+          tooltip: "CORRECT: The standard normal distribution is symmetric around 0, so P(Z > 0) = 0.5."
+        },
+        {
+          text: "equal to 1",
+          tooltip: "INCORRECT: This would mean it's certain that Z > 0, which isn't true."
+        },
+        {
+          text: "at least 0.5",
+          tooltip: "INCORRECT: The probability is exactly 0.5, not at least 0.5."
+        },
+        {
+          text: "1.96",
+          tooltip: "INCORRECT: 1.96 is a z-value, not a probability (probabilities must be ≤ 1)."
+        }
+      ],
+      correctAnswer: "0.5",
+      explanation: "The standard normal distribution is symmetric around the mean (0), so exactly half of the distribution lies above 0. Therefore, P(Z > 0) = 0.5."
+    },
+    {
+      id: 131,
+      question: "The assembly time for a product is uniformly distributed between 6 to 10 minutes. The probability of assembling the product in less than 6 minutes is",
+      options: [
+        {
+          text: "zero",
+          tooltip: "CORRECT: The distribution only exists between 6 and 10 minutes, so P(X < 6) = 0."
+        },
+        {
+          text: "0.50",
+          tooltip: "INCORRECT: Values less than 6 are outside the distribution range."
+        },
+        {
+          text: "0.15",
+          tooltip: "INCORRECT: There's no probability mass below the minimum value of 6."
+        },
+        {
+          text: "1",
+          tooltip: "INCORRECT: This would mean it's certain to take less than 6 minutes, which is impossible."
+        }
+      ],
+      correctAnswer: "zero",
+      explanation: "For uniform distribution U(6,10), the probability is zero for any value outside the range [6,10]. Since 6 is the minimum value, P(X < 6) = 0."
+    },
+    {
+      id: 132,
+      question: "Z is a standard normal random variable. What is the value of Z if the area between -Z and Z is 0.754?",
+      options: [
+        {
+          text: "0.377",
+          tooltip: "INCORRECT: This would be half the area, but not the corresponding z-value."
+        },
+        {
+          text: "0.123",
+          tooltip: "INCORRECT: This doesn't correspond to the symmetric area calculation."
+        },
+        {
+          text: "2.16",
+          tooltip: "INCORRECT: This z-value would give an area much larger than 0.754."
+        },
+        {
+          text: "1.16",
+          tooltip: "CORRECT: If area between -z and z is 0.754, then P(Z ≤ z) = 0.5 + 0.754/2 = 0.877. From z-table, z ≈ 1.16."
+        }
+      ],
+      correctAnswer: "1.16",
+      explanation: "If the area between -z and z is 0.754, then the area from 0 to z is 0.754/2 = 0.377. So P(Z ≤ z) = 0.5 + 0.377 = 0.877. From the z-table, z ≈ 1.16."
+    },
+    {
+      id: 133,
+      question: "The assembly time for a product is uniformly distributed between 6 to 10 minutes. The probability of assembling the product in 7 minutes or more is",
+      options: [
+        {
+          text: "0.25",
+          tooltip: "INCORRECT: This would be the probability of a 1-minute interval in a 4-minute range."
+        },
+        {
+          text: "0.75",
+          tooltip: "CORRECT: P(X ≥ 7) = (10-7)/(10-6) = 3/4 = 0.75."
+        },
+        {
+          text: "zero",
+          tooltip: "INCORRECT: There is positive probability for values 7 and above within the range."
+        },
+        {
+          text: "1",
+          tooltip: "INCORRECT: This would mean it's certain to take 7 minutes or more, which isn't true."
+        }
+      ],
+      correctAnswer: "0.75",
+      explanation: "For uniform distribution U(6,10): P(X ≥ 7) = (upper bound - 7)/(total range) = (10-7)/(10-6) = 3/4 = 0.75."
+    },
+    {
+      id: 134,
+      question: "The random variable x is known to be uniformly distributed between 70 and 90. The probability of x having a value between 80 to 95 is",
+      options: [
+        {
+          text: "0.75",
+          tooltip: "INCORRECT: This doesn't account for the fact that 95 is outside the distribution range."
+        },
+        {
+          text: "0.5",
+          tooltip: "CORRECT: P(80 ≤ X ≤ 95) = P(80 ≤ X ≤ 90) = (90-80)/(90-70) = 10/20 = 0.5."
+        },
+        {
+          text: "0.05",
+          tooltip: "INCORRECT: This is much too small for half of the distribution."
+        },
+        {
+          text: "1",
+          tooltip: "INCORRECT: This would mean the event is certain, which it's not."
+        }
+      ],
+      correctAnswer: "0.5",
+      explanation: "For uniform distribution U(70,90), values above 90 have zero probability. So P(80 ≤ X ≤ 95) = P(80 ≤ X ≤ 90) = (90-80)/(90-70) = 10/20 = 0.5."
+    },
+    {
+      id: 135,
+      question: "Z is a standard normal random variable. The P(1.20 ≤ Z ≤ 1.85) equals",
+      options: [
+        {
+          text: "0.4678",
+          tooltip: "INCORRECT: This is too high for the interval between 1.20 and 1.85."
+        },
+        {
+          text: "0.3849",
+          tooltip: "INCORRECT: This doesn't match the correct calculation."
+        },
+        {
+          text: "0.8527",
+          tooltip: "INCORRECT: This is much too high; it's larger than either individual cumulative probability."
+        },
+        {
+          text: "0.0829",
+          tooltip: "CORRECT: P(1.20 ≤ Z ≤ 1.85) = P(Z ≤ 1.85) - P(Z ≤ 1.20) = 0.9678 - 0.8849 = 0.0829."
+        }
+      ],
+      correctAnswer: "0.0829",
+      explanation: "P(1.20 ≤ Z ≤ 1.85) = P(Z ≤ 1.85) - P(Z ≤ 1.20) = 0.9678 - 0.8849 = 0.0829."
+    },
+    {
+      id: 136,
+      question: "X is a normally distributed random variable with a mean of 5 and a variance of 4. The probability that X is greater than 10.52 is",
+      options: [
+        {
+          text: "0.0029",
+          tooltip: "CORRECT: σ = √4 = 2, z = (10.52-5)/2 = 2.76. P(Z > 2.76) = 1 - 0.9971 = 0.0029."
+        },
+        {
+          text: "0.0838",
+          tooltip: "INCORRECT: This calculation doesn't match the correct z-score transformation."
+        },
+        {
+          text: "0.4971",
+          tooltip: "INCORRECT: This would be approximately P(0 ≤ Z ≤ 2.76), not P(Z > 2.76)."
+        },
+        {
+          text: "0.9971",
+          tooltip: "INCORRECT: This is P(Z ≤ 2.76), we need P(Z > 2.76) = 1 - 0.9971."
+        }
+      ],
+      correctAnswer: "0.0029",
+      explanation: "Standard deviation σ = √4 = 2. z = (10.52-5)/2 = 2.76. P(X > 10.52) = P(Z > 2.76) = 1 - P(Z ≤ 2.76) = 1 - 0.9971 = 0.0029."
+    },
+    {
+      id: 137,
+      question: "A population has a standard deviation of 50. A random sample of 100 items from this population is selected. The sample mean is determined to be 600. At 95% confidence, the margin of error is",
+      options: [
+        {
+          text: "5",
+          tooltip: "INCORRECT: This is the standard error (50/√100), not the margin of error."
+        },
+        {
+          text: "9.8",
+          tooltip: "CORRECT: Margin of error = z₀.₀₂₅ × (σ/√n) = 1.96 × (50/√100) = 1.96 × 5 = 9.8."
+        },
+        {
+          text: "650",
+          tooltip: "INCORRECT: This appears to be adding the margin of error to the sample mean, but that's not what was asked."
+        },
+        {
+          text: "609.8",
+          tooltip: "INCORRECT: This also appears to combine the sample mean with margin of error incorrectly."
+        }
+      ],
+      correctAnswer: "9.8",
+      explanation: "For 95% confidence, z₀.₀₂₅ = 1.96. Margin of error = z × (σ/√n) = 1.96 × (50/√100) = 1.96 × 5 = 9.8."
+    },
+    {
+      id: 138,
+      question: "The center of a normal curve is",
+      options: [
+        {
+          text: "always equal to zero",
+          tooltip: "INCORRECT: This is only true for the standard normal distribution."
+        },
+        {
+          text: "is the mean of the distribution",
+          tooltip: "CORRECT: The center of any normal distribution is located at its mean μ."
+        },
+        {
+          text: "cannot be negative",
+          tooltip: "INCORRECT: The mean (center) of a normal distribution can be any real number, including negative values."
+        },
+        {
+          text: "is the standard deviation",
+          tooltip: "INCORRECT: The standard deviation determines the spread, not the center location."
+        }
+      ],
+      correctAnswer: "is the mean of the distribution",
+      explanation: "The center (peak) of a normal distribution is always located at the mean μ. The distribution is symmetric around this center point."
+    },
+    {
+      id: 139,
+      question: "Z is a standard normal random variable. The P(-1.20 ≤ Z ≤ 1.50) equals",
+      options: [
+        {
+          text: "0.0483",
+          tooltip: "INCORRECT: This is much too small for such a wide interval around the mean."
+        },
+        {
+          text: "0.3849",
+          tooltip: "INCORRECT: This would be approximately P(0 ≤ Z ≤ 1.20), not the full interval."
+        },
+        {
+          text: "0.4332",
+          tooltip: "INCORRECT: This would be approximately P(0 ≤ Z ≤ 1.50), not the full interval."
+        },
+        {
+          text: "0.8181",
+          tooltip: "CORRECT: P(-1.20 ≤ Z ≤ 1.50) = P(Z ≤ 1.50) - P(Z ≤ -1.20) = 0.9332 - 0.1151 = 0.8181."
+        }
+      ],
+      correctAnswer: "0.8181",
+      explanation: "P(-1.20 ≤ Z ≤ 1.50) = P(Z ≤ 1.50) - P(Z ≤ -1.20) = 0.9332 - 0.1151 = 0.8181."
+    },
+    {
+      id: 140,
+      question: "Z is a standard normal random variable. What is the value of Z if the area to the right of Z is 0.9803?",
+      options: [
+        {
+          text: "-2.06",
+          tooltip: "CORRECT: If P(Z > z) = 0.9803, then P(Z ≤ z) = 0.0197. From z-table, z ≈ -2.06."
+        },
+        {
+          text: "0.4803",
+          tooltip: "INCORRECT: This is not a z-value that corresponds to the given right-tail area."
+        },
+        {
+          text: "0.0997",
+          tooltip: "INCORRECT: This appears to be related to the left-tail area but isn't the z-value."
+        },
+        {
+          text: "3.06",
+          tooltip: "INCORRECT: This positive z-value would give a very small right-tail area, not 0.9803."
+        }
+      ],
+      correctAnswer: "-2.06",
+      explanation: "If the area to the right is 0.9803, then the area to the left is 1 - 0.9803 = 0.0197. Looking up 0.0197 in the standard normal table gives z ≈ -2.06."
+    },
+    {
+      id: 141,
+      question: "The assembly time for a product is uniformly distributed between 6 to 10 minutes. The expected assembly time (in minutes) is",
+      options: [
+        {
+          text: "16",
+          tooltip: "INCORRECT: This would be a + b = 6 + 10, which is not the expected value formula."
+        },
+        {
+          text: "2",
+          tooltip: "INCORRECT: This appears to be related to the range but not the expected value."
+        },
+        {
+          text: "8",
+          tooltip: "CORRECT: For uniform distribution U(a,b), E(X) = (a+b)/2 = (6+10)/2 = 8."
+        },
+        {
+          text: "4",
+          tooltip: "INCORRECT: This is b - a = 10 - 6, which is the range, not the expected value."
+        }
+      ],
+      correctAnswer: "8",
+      explanation: "For a uniform distribution U(a,b), the expected value (mean) is E(X) = (a+b)/2 = (6+10)/2 = 8 minutes."
+    },
+    {
+      id: 142,
+      question: "The sample mean is the point estimator of",
+      options: [
+        {
+          text: "σ²",
+          tooltip: "INCORRECT: The sample variance s² is the estimator of σ², not the sample mean."
+        },
+        {
+          text: "μ",
+          tooltip: "CORRECT: The sample mean x̄ is the point estimator of the population mean μ."
+        },
+        {
+          text: "σ",
+          tooltip: "INCORRECT: The sample standard deviation s is the estimator of σ, not the sample mean."
+        },
+        {
+          text: "p",
+          tooltip: "INCORRECT: The sample proportion p̂ is the estimator of p, not the sample mean."
+        }
+      ],
+      correctAnswer: "μ",
+      explanation: "The sample mean x̄ is used as a point estimator for the population mean μ. It's an unbiased estimator."
+    },
+    {
+      id: 143,
+      question: "In order to determine an interval for the mean of a population with unknown standard deviation a sample of 61 items is selected. The mean of the sample is determined to be 23. The number of degrees of freedom for reading the t value is",
+      options: [
+        {
+          text: "22",
+          tooltip: "INCORRECT: This doesn't relate to the sample size given."
+        },
+        {
+          text: "23",
+          tooltip: "INCORRECT: This is the sample mean, not the degrees of freedom."
+        },
+        {
+          text: "60",
+          tooltip: "CORRECT: Degrees of freedom = n - 1 = 61 - 1 = 60."
+        },
+        {
+          text: "61",
+          tooltip: "INCORRECT: This is the sample size n, not n-1."
+        }
+      ],
+      correctAnswer: "60",
+      explanation: "When using the t-distribution for confidence intervals with unknown population standard deviation, degrees of freedom = n - 1 = 61 - 1 = 60."
+    },
+    {
+      id: 144,
+      question: "A standard normal distribution is a normal distribution",
+      options: [
+        {
+          text: "with a mean of 1 and a standard deviation of 0",
+          tooltip: "INCORRECT: A standard deviation of 0 would make it a degenerate distribution, not normal."
+        },
+        {
+          text: "with a mean of 0 and a standard deviation of 1",
+          tooltip: "CORRECT: The standard normal distribution has μ = 0 and σ = 1."
+        },
+        {
+          text: "with any mean and a standard deviation of 1",
+          tooltip: "INCORRECT: The mean must specifically be 0 for the standard normal distribution."
+        },
+        {
+          text: "with any mean and any standard deviation",
+          tooltip: "INCORRECT: This describes any normal distribution, not specifically the standard normal."
+        }
+      ],
+      correctAnswer: "with a mean of 0 and a standard deviation of 1",
+      explanation: "The standard normal distribution is specifically defined as a normal distribution with mean μ = 0 and standard deviation σ = 1."
+    },
+    {
+      id: 145,
+      question: "The standard deviation of a standard normal distribution",
+      options: [
+        {
+          text: "is always equal to zero",
+          tooltip: "INCORRECT: A standard deviation of zero would mean no variability, which isn't normal."
+        },
+        {
+          text: "is always equal to one",
+          tooltip: "CORRECT: By definition, the standard normal distribution has σ = 1."
+        },
+        {
+          text: "can be any positive value",
+          tooltip: "INCORRECT: For the standard normal distribution, σ is specifically 1."
+        },
+        {
+          text: "can be any value",
+          tooltip: "INCORRECT: The standard deviation must be positive and specifically equals 1 for standard normal."
+        }
+      ],
+      correctAnswer: "is always equal to one",
+      explanation: "The standard normal distribution is defined with a standard deviation σ = 1. This is what makes it 'standard' along with μ = 0."
     }
   ],
 
@@ -2203,7 +3645,24 @@ const DATA = {
     ...(typeof MODULE16_KEY_FORMULAS_NOTES !== 'undefined' ? MODULE16_KEY_FORMULAS_NOTES : {}),
     ...(typeof MODULE4_CONTINUOUS_DISTRIBUTIONS_NOTES !== 'undefined' ? MODULE4_CONTINUOUS_DISTRIBUTIONS_NOTES : {}),
     ...(typeof MODULE4_GLOSSARY_NOTES !== 'undefined' ? MODULE4_GLOSSARY_NOTES : {}),
-    ...(typeof MODULE4_KEY_FORMULAS_NOTES !== 'undefined' ? MODULE4_KEY_FORMULAS_NOTES : {})
+    ...(typeof MODULE4_KEY_FORMULAS_NOTES !== 'undefined' ? MODULE4_KEY_FORMULAS_NOTES : {}),
+    ...(typeof MODULE5_HYPOTHESIS_BASICS_NOTES !== 'undefined' ? MODULE5_HYPOTHESIS_BASICS_NOTES : {}),
+    ...(typeof MODULE5_ONE_POPULATION_MEAN_NOTES !== 'undefined' ? MODULE5_ONE_POPULATION_MEAN_NOTES : {}),
+    ...(typeof MODULE5_P_VALUE_NOTES !== 'undefined' ? MODULE5_P_VALUE_NOTES : {}),
+    ...(typeof MODULE5_TYPE_I_TYPE_II_NOTES !== 'undefined' ? MODULE5_TYPE_I_TYPE_II_NOTES : {}),
+    ...(typeof MODULE5_POPULATION_MEAN_SIGMA_UNKNOWN_NOTES !== 'undefined' ? MODULE5_POPULATION_MEAN_SIGMA_UNKNOWN_NOTES : {}),
+    ...(typeof MODULE5_POPULATION_PROPORTION_NOTES !== 'undefined' ? MODULE5_POPULATION_PROPORTION_NOTES : {}),
+    ...(typeof MODULE5_TWO_POPULATION_MEANS_NOTES !== 'undefined' ? MODULE5_TWO_POPULATION_MEANS_NOTES : {}),
+    ...(typeof MODULE5_MATCHED_SAMPLES_NOTES !== 'undefined' ? MODULE5_MATCHED_SAMPLES_NOTES : {}),
+    ...(typeof MODULE5_PRACTICAL_APPLICATIONS_NOTES !== 'undefined' ? MODULE5_PRACTICAL_APPLICATIONS_NOTES : {}),
+    ...(typeof MODULE5_GLOSSARY_NOTES !== 'undefined' ? MODULE5_GLOSSARY_NOTES : {}),
+    ...(typeof MODULE5_KEY_FORMULAS_NOTES !== 'undefined' ? MODULE5_KEY_FORMULAS_NOTES : {}),
+    ...(typeof MODULE6_POPULATION_VARIANCE_NOTES !== 'undefined' ? MODULE6_POPULATION_VARIANCE_NOTES : {}),
+    ...(typeof MODULE6_TWO_POPULATION_VARIANCES_NOTES !== 'undefined' ? MODULE6_TWO_POPULATION_VARIANCES_NOTES : {}),
+    ...(typeof MODULE6_ANOVA_NOTES !== 'undefined' ? MODULE6_ANOVA_NOTES : {}),
+    ...(typeof MODULE6_GOODNESS_OF_FIT_NOTES !== 'undefined' ? MODULE6_GOODNESS_OF_FIT_NOTES : {}),
+    ...(typeof MODULE6_INDEPENDENCE_NOTES !== 'undefined' ? MODULE6_INDEPENDENCE_NOTES : {}),
+    ...(typeof MODULE6_KEY_FORMULAS_NOTES !== 'undefined' ? MODULE6_KEY_FORMULAS_NOTES : {})
   },
 
   // All legacy content removed - now using modular approach with MODULE1_NOTES and MODULE2_NOTES
