@@ -112,24 +112,33 @@ html:`<div class="cb two-col"><div class="cc oc"><h4>Exogenous Construct</h4>
 <li>No predictor = no "unexplained variance from predictors" = no disturbance</li>
 <li>Their total variance is simply estimated as a free parameter</li></ul></div>`},
 
-{num:'Slides 21&ndash;22',title:'Incorporating Latent Constructs',subtitle:'Benefits &amp; moving from indicators to constructs',toc:'Incorporating Latent Constructs',
-html:`<div class="cb bg"><h3 style="color:#fff">Three Benefits of Using Latent Constructs</h3>
-<div class="three-col" style="margin-top:12px">
-<div style="text-align:center"><div style="font-size:1.8rem;margin-bottom:6px">&#9881;</div><strong>Specify Measurement Error</strong>
+{num:'Slide 21',title:'Incorporating Latent Constructs &mdash; Benefits',subtitle:'Why use latent constructs over observed variables?',toc:'Latent Construct Benefits',
+html:`<div class="cb bg"><h3 style="color:#fff">Three Benefits of Using Latent Constructs</h3></div>
+<div class="cb three-col">
+<div class="cc oc" style="text-align:center"><div style="font-size:1.8rem;margin-bottom:6px">&#9881;</div><h4>Specify Measurement Error</h4>
 <p style="font-size:.88rem;margin-top:4px">Explicitly models how much noise is in each item, rather than pretending items are perfect.</p></div>
-<div style="text-align:center"><div style="font-size:1.8rem;margin-bottom:6px">&#9733;</div><strong>Represent Theoretical Concepts</strong>
+<div class="cc bc" style="text-align:center"><div style="font-size:1.8rem;margin-bottom:6px">&#9733;</div><h4>Represent Theoretical Concepts</h4>
 <p style="font-size:.88rem;margin-top:4px">Your hypothesis is about "Trust," not about "item Q3." Latent constructs match the level of your theory.</p></div>
-<div style="text-align:center"><div style="font-size:1.8rem;margin-bottom:6px">&#9889;</div><strong>Improve Statistical Estimation</strong>
-<p style="font-size:.88rem;margin-top:4px">By removing measurement error, path coefficients are unbiased (no attenuation).</p></div></div></div>
-<div class="cb two-col"><div class="cc oc"><h4>Indicators (Measured Variables)</h4><ul>
-<li>Provide <strong>operational</strong> measures of constructs</li>
-<li>Provide only an empirical estimate of associations</li>
+<div class="cc oc" style="text-align:center"><div style="font-size:1.8rem;margin-bottom:6px">&#9889;</div><h4>Improve Statistical Estimation</h4>
+<p style="font-size:.88rem;margin-top:4px">By removing measurement error, path coefficients are unbiased (no attenuation).</p></div></div>
+<div class="cb bh"><h3>Why Multiple Items?</h3><ul>
+<li>A single item can't separate signal from noise</li>
+<li>3&ndash;5 items let SEM extract common variance and isolate error</li>
+<li>Result: cleaner, more accurate path estimates</li></ul></div>`},
+
+{num:'Slide 22',title:'Moving From Indicators to Constructs',subtitle:'Bridging the operational and theoretical levels',toc:'Indicators to Constructs',
+html:`<div class="cb two-col"><div class="cc oc"><h4>Indicators (Measured Variables)</h4><ul>
+<li>Provide <strong>operational</strong> measures of constructs &mdash; the data you actually collect</li>
+<li>Provide only an empirical estimate of associations (observed correlations/covariances)</li>
 <li>They are the means to an end, not the end itself</li></ul>
 <p style="margin-top:8px;font-size:.85rem;font-weight:600;color:var(--od)">Level: Operational (data)</p></div>
 <div class="cc bc"><h4>Constructs (Latent Variables)</h4><ul>
 <li>Theoretical relationships are between constructs, NOT indicators</li>
-<li>Represent the concepts of interest</li>
+<li>Represent the concepts of interest &mdash; what your theory is actually about</li>
 <li>Your hypothesis: "Trust affects Purchase Intention" &mdash; not "Q3 affects Q7"</li></ul>
 <p style="margin-top:8px;font-size:.85rem;font-weight:600;color:var(--bd)">Level: Theoretical (concept)</p></div></div>
+<div class="cb bh"><h3>Key Distinction</h3><ul>
+<li><span class="to">Indicators</span> = operational (data level)</li>
+<li><span class="tb">Constructs</span> = theoretical (concept level)</li></ul></div>
 <div class="cb bp">SEM bridges the two: uses indicators to build constructs, then tests theory at the construct level.</div>`}
 );
