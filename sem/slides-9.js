@@ -16,8 +16,9 @@ html:`<div class="cb bg"><p><strong>Goal:</strong> decompose a bivariate correla
 <p style="margin-top:6px">Compound path from X1 to Y1: X1 &harr; X2 &rarr; Y1</p>
 <div class="fb">r(X1, Y1) = correlation(X1, X2) &times; path(X2 &rarr; Y1)</div></div>`},
 
-{num:'Slide 63',title:'Direct vs Indirect Relationships &mdash; Estimating Parameters',subtitle:'Each arrow = a parameter to estimate',toc:'Estimating Parameters',
-html:`<div class="cb two-col"><div class="cc oc"><h4>Direct Relationship</h4><ul>
+{num:'Slide 63',title:'Direct vs Indirect Relationships &mdash; Estimating Parameters',subtitle:'Builds on slide 56&rsquo;s conceptual overview &mdash; now with computational mechanics',toc:'Estimating Parameters',
+html:`<div class="cb bg"><p>Builds on <strong>slide 56's conceptual overview</strong> &mdash; now with the computational mechanics using <strong>slide 62's tracing rules</strong>.</p></div>
+<div class="cb two-col"><div class="cc oc"><h4>Direct Relationship</h4><ul>
 <li>Only one arrow links two constructs</li>
 <li>Effect = that single parameter estimate</li>
 <li><em>Trust &rarr; Loyalty = 0.45</em></li>

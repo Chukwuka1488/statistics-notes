@@ -6,7 +6,7 @@ html:`<div class="cb bg"><p>&ldquo;We covered this earlier, but here's the remin
 <li>Only sends arrows, never predicted</li>
 <li>Measured by multiple manifest variables (x's)</li></ul></div>
 <div class="cc bc"><h4>Endogenous Constructs</h4><ul>
-<li>Latent equivalent of DVs</li>
+<li>Can serve as <strong>both IV and DV simultaneously</strong> (recall slide 20)</li>
 <li>Receives at least one arrow, can also predict others</li>
 <li>Measured by multiple manifest variables (y's)</li></ul></div></div>
 <div class="cb bh"><h3>Why Repeated Here</h3><ul>
@@ -85,7 +85,19 @@ html:`<div class="cb bo"><h3 class="orange">1. Absolute Fit &mdash; &ldquo;How f
 <div class="cb bw"><h3>3. Parsimony Fit &mdash; &ldquo;Is the fit worth the complexity?&rdquo;</h3><ul>
 <li>Prefer the simpler model that explains equally well (Occam's Razor)</li>
 <li><strong>PNFI</strong> &mdash; penalizes complex models. For comparison only, not standalone</li></ul></div>
-<div class="cb bp">Always report: &chi;&sup2; with df and p-value, CFI, RMSEA, and SRMR (&lt; 0.08).</div>`},
+<div class="cb bh"><h3>SRMR (Standardized Root Mean Square Residual)</h3><ul>
+<li>Average discrepancy between observed and predicted correlations</li>
+<li>Directly summarizes the residual matrix (slide 42) into one number</li>
+<li>Want <strong>&lt; 0.08</strong>. Complements RMSEA: RMSEA penalizes complexity, SRMR measures raw residual size</li></ul></div>
+<div class="cb two-col"><div class="cc oc"><h4>Convergent Validity</h4><ul>
+<li>Items within the same construct correlate highly</li>
+<li><strong>AVE &gt; 0.50</strong>, loadings &gt; 0.70</li>
+<li>If fails: items don't measure the construct well enough</li></ul></div>
+<div class="cc bc"><h4>Discriminant Validity</h4><ul>
+<li>Each construct is distinct from the others</li>
+<li><strong>AVE &gt; squared inter-construct correlation</strong> (Fornell-Larcker criterion)</li>
+<li>If fails: two constructs too similar &mdash; consider merging</li></ul></div></div>
+<div class="cb bp">Always report: &chi;&sup2; with df and p-value, CFI, RMSEA, and SRMR.</div>`},
 
 {num:'Slide 73',title:'Fit Guidelines Table',subtitle:'Key thresholds to know',toc:'Fit Guidelines',
 html:`<div class="cb bw"><table style="width:100%;border-collapse:collapse;font-size:.92rem">
